@@ -22,17 +22,13 @@
             --text-shadow-light: 0 1px 2px rgba(0,0,0,0.6);
             --text-shadow-heading: 0 2px 5px rgba(0,0,0,0.5);
 
-            /* --- PARTICLE COLORS REMOVED (or can be kept if used elsewhere) --- */
-            /* --particle-color: rgba(212, 172, 13, 0.75); */
-            /* --line-color: rgba(212, 172, 13, 0.35); */
-
             --skills-text-color-base: #C58917;
             --skills-text-color-neon: #FFD700;
             --skills-text-glass-highlight: rgba(255, 245, 200, 0.5);
 
-            --profile-border-start-color: var(--highlight-color);
-            --profile-border-mid-color: var(--secondary-color);
-            --profile-border-end-color: var(--primary-color);
+            /* --profile-border-start-color: var(--highlight-color); REMOVED - No longer needed for spinning border */
+            /* --profile-border-mid-color: var(--secondary-color); REMOVED */
+            /* --profile-border-end-color: var(--primary-color); REMOVED */
         }
 
         * {
@@ -52,7 +48,6 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            /* background-image: url('https://assets.onecompiler.app/43j5j5k35/43j7vvpsn/Proche.jpeg'); REMOVED */
             background-color: #000; /* Fallback background color */
             background-size: cover;
             background-position: center center;
@@ -61,20 +56,6 @@
             position: relative;
         }
 
-        /* REMOVE or COMMENT OUT #particleCanvas CSS */
-        /*
-        #particleCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-        */
-
-        /* NEW: Styles for the background video */
         #background-video {
             position: fixed;
             right: 0;
@@ -83,14 +64,13 @@
             min-height: 100%;
             width: auto;
             height: auto;
-            z-index: -1; /* Place it behind all other content */
-            object-fit: cover; /* Cover the screen, cropping if needed */
+            z-index: -1;
+            object-fit: cover;
         }
-
 
         .linktree-main-content {
             position: relative;
-            z-index: 10; /* Ensure this is above the video */
+            z-index: 10;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -128,8 +108,11 @@
             transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
             box-shadow: 0 0 25px rgba(var(--highlight-color-rgb), 0.65), 0 0 40px rgba(var(--highlight-color-rgb), 0.3);
             position: relative;
+            /* border: 5px solid transparent; Optional: if you want a static border around the pic */
         }
 
+        /* REMOVED SPINNING BORDER STYLES */
+        /*
         @property --angle {
           syntax: '<angle>';
           initial-value: 0deg;
@@ -141,10 +124,10 @@
             inset: -5px;
             border-radius: 50%;
             background: conic-gradient(from var(--angle),
-                                        var(--profile-border-start-color),
-                                        var(--profile-border-mid-color),
-                                        var(--profile-border-end-color),
-                                        var(--profile-border-start-color));
+                                    var(--profile-border-start-color),
+                                    var(--profile-border-mid-color),
+                                    var(--profile-border-end-color),
+                                    var(--profile-border-start-color));
             z-index: -1;
             animation: spinBorder 4s linear infinite;
         }
@@ -154,9 +137,10 @@
         .profile:hover .profile-pic::before {
             animation-duration: 2.5s;
         }
+        */
 
         .profile:hover .profile-pic {
-            transform: scale(1.12);
+            transform: scale(1.12); /* Keep hover effect on pic itself */
             box-shadow: 0 0 40px rgba(var(--highlight-color-rgb), 0.9), 0 0 60px rgba(var(--highlight-color-rgb), 0.5);
         }
 
@@ -200,7 +184,7 @@
                 0px 1px 1.5px var(--skills-text-glass-highlight),
                 var(--text-shadow-light);
             line-height: 1.6;
-            min-height: 2.5em; /* Adjusted to better fit typical text height + cursor */
+            min-height: 2.5em;
         }
         .profile .skills p {
             margin: 0;
@@ -209,10 +193,10 @@
         .typewriter-cursor {
             display: inline-block;
             background-color: var(--skills-text-color-neon);
-            width: 10px; /* Adjusted width */
-            height: 1.45rem; /* Match clamp's upper typical value for .skills font-size */
+            width: 10px;
+            height: 1.45rem;
             animation: blink 0.9s step-end infinite;
-            vertical-align: bottom; /* Better alignment with text */
+            vertical-align: bottom;
         }
 
         @keyframes blink {
@@ -302,7 +286,7 @@
 
         @media screen and (max-width: 768px) {
             .profile-pic { width: 140px; height: 140px; }
-            .profile-pic::before { inset: -4px; }
+            /* .profile-pic::before { inset: -4px; } REMOVED - No longer needed */
             .links { gap: 18px; max-width: 92%; }
             .link-item { padding: 18px 22px; gap: 20px; border-radius: 15px; }
         }
@@ -310,13 +294,13 @@
             body { padding: 15px; }
             .linktree-main-content { padding: 20px 15px; }
             .profile-pic { width: 110px; height: 110px; margin-bottom: 20px; }
-            .profile-pic::before { inset: -3px; }
+            /* .profile-pic::before { inset: -3px; } REMOVED - No longer needed */
             .profile h1 { letter-spacing: 0.5px; }
             .links { gap: 15px; }
             .link-item { padding: 16px 18px; border-radius: 12px; gap: 15px; }
             .badge { padding: 4px 10px; font-size: 0.7rem; }
             footer { margin-top: 50px; font-size: 0.8rem;}
-            .typewriter-cursor { height: 1.3rem; } /* Adjusted for smaller skill font */
+            .typewriter-cursor { height: 1.3rem; }
         }
     </style>
 </head>
@@ -328,7 +312,7 @@
 
     <div class="linktree-main-content">
         <div class="profile">
-            <div class="profile-pic" style="background-image: url('https://media.licdn.com/dms/image/D4D03AQH1X2Xn9n-YCA/profile-displayphoto-shrink_400_400/0/1708024768037?e=1721260800&v=beta&t=11_vY4n0AfvM10jXJ3vK6VTk5z75p_x_o8rtNuq_CMk');"></div>
+            <div class="profile-pic" style="background-image: url('PP.jpg');"></div>
             <h1>Syed Daniyal Haider Naqvi</h1>
             <div class="title">AI/ML Enthusiast | Developer</div>
             <div class="contact">naqvidaniya598@gmail.com</div>
@@ -381,130 +365,9 @@
             setTimeout(type, 1000); // Delay before typing starts
         }
 
-        // --- REMOVE ALL PARTICLE JAVASCRIPT ---
-        /*
-        const canvas = document.getElementById('particleCanvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let particlesArray = [];
-        const numberOfParticles = 70;
-        const mouse = { x: null, y: null, radius: 100 };
-
-        window.addEventListener('mousemove', function(event){
-            mouse.x = event.clientX;
-            mouse.y = event.clientY;
-        });
-        window.addEventListener('mouseout', function(){
-            mouse.x = undefined;
-            mouse.y = undefined;
-        });
-
-
-        class Particle {
-            constructor(x, y, size, color, speedX, speedY){
-                this.x = x;
-                this.y = y;
-                this.size = size;
-                this.color = color;
-                this.speedX = speedX;
-                this.speedY = speedY;
-            }
-            draw(){
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-            update(){
-                if(this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-                if(this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx*dx + dy*dy);
-                if (distance < mouse.radius + this.size) {
-                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 2;
-                    if (mouse.x > this.x && this.x > this.size * 10) this.x -= 2;
-                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 2;
-                    if (mouse.y > this.y && this.y > this.size * 10) this.y -= 2;
-                }
-            }
-        }
-
-        function initParticles(){
-            particlesArray = [];
-            let particleColor = getComputedStyle(document.documentElement).getPropertyValue('--particle-color').trim() || 'rgba(212, 172, 13, 0.75)';
-            for(let i = 0; i < numberOfParticles; i++){
-                let size = Math.random() * 2.5 + 1;
-                let x = Math.random() * (innerWidth - size * 2) + size;
-                let y = Math.random() * (innerHeight - size * 2) + size;
-                let speedX = (Math.random() * 0.4) - 0.2;
-                let speedY = (Math.random() * 0.4) - 0.2;
-                particlesArray.push(new Particle(x, y, size, particleColor, speedX, speedY));
-            }
-        }
-
-        function connectParticles(){
-            let lineColor = getComputedStyle(document.documentElement).getPropertyValue('--line-color').trim() || 'rgba(212, 172, 13, 0.35)';
-            for(let a = 0; a < particlesArray.length; a++){
-                for(let b = a; b < particlesArray.length; b++){
-                    let dx = particlesArray[a].x - particlesArray[b].x;
-                    let dy = particlesArray[a].y - particlesArray[b].y;
-                    let distance = Math.sqrt(dx*dx + dy*dy);
-                    if(distance < 100){
-                        ctx.strokeStyle = lineColor;
-                        ctx.lineWidth = 0.2;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
-                    }
-                }
-                if (mouse.x && mouse.y) { // Check if mouse coordinates are defined
-                    let dxMouse = particlesArray[a].x - mouse.x;
-                    let dyMouse = particlesArray[a].y - mouse.y;
-                    let distanceMouse = Math.sqrt(dxMouse*dxMouse + dyMouse*dyMouse);
-                    if (distanceMouse < mouse.radius + 50) { // Increased connection radius to mouse
-                         ctx.strokeStyle = lineColor; // Use the same line color
-                         ctx.lineWidth = 0.15; // Slightly thinner lines to mouse
-                         ctx.beginPath();
-                         ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                         ctx.lineTo(mouse.x, mouse.y);
-                         ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function animateParticles(){
-            ctx.clearRect(0,0, canvas.width, canvas.height);
-            for(let i = 0; i < particlesArray.length; i++){
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            connectParticles();
-            requestAnimationFrame(animateParticles);
-        }
-
-        window.addEventListener('resize', function(){
-            // Ensure canvas exists before trying to set its properties or re-init particles
-            if (canvas) {
-                canvas.width = innerWidth;
-                canvas.height = innerHeight;
-                mouse.radius = 100; // Reset mouse radius on resize
-                initParticles();
-            }
-        });
-        */
-
         function staggerLinkAnimations() {
             const linkItemsForStagger = document.querySelectorAll('.links .link-item');
             linkItemsForStagger.forEach((item, index) => {
-                // Start staggering after the profile animation (0.8s)
                 item.style.animationDelay = `${0.8 + index * 0.12}s`;
             });
         }
@@ -512,12 +375,12 @@
         function profileParallax() {
             const profileSection = document.querySelector('.profile');
             if (profileSection) {
-                const parallaxIntensity = 0.008; // Softer parallax effect
-                const maxOffset = 12; // Maximum pixel offset
-                const rotationIntensity = 0.05; // Reduced rotation
+                const parallaxIntensity = 0.008;
+                const maxOffset = 12;
+                const rotationIntensity = 0.05;
 
                 document.addEventListener('mousemove', (e) => {
-                    if (window.innerWidth < 768) { // Disable on smaller screens
+                    if (window.innerWidth < 768) {
                         requestAnimationFrame(() => {
                             profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
                         });
@@ -531,21 +394,18 @@
                         profileSection.style.transform = `translate(${clampedX}px, ${clampedY}px) rotateX(${clampedY * rotationIntensity}deg) rotateY(${clampedX * -rotationIntensity}deg)`;
                     });
                 });
-                 document.addEventListener('mouseleave', () => { // Reset when mouse leaves window
-                     requestAnimationFrame(() => {
+                 document.addEventListener('mouseleave', () => {
+                    requestAnimationFrame(() => {
                         profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
                      });
                 });
             }
         }
 
-        // Remove calls to particle functions from window.onload
         window.onload = function() {
             typeWriterEffect();
             staggerLinkAnimations();
             profileParallax();
-            // initParticles(); // REMOVE
-            // animateParticles(); // REMOVE
         };
 
     </script>
