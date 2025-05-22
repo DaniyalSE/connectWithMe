@@ -4,303 +4,305 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syed Daniyal Haider Naqvi | AI/ML Enthusiast</title>
+    <link rel="icon" href="favicon.png" type="image/png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;600;700&family=Roboto+Mono:wght@400;500&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
+            /* Dark Theme (Default) */
+            --bg-color: #0A0A0A;
+            --text-color-main: #FFFFFF;
+            --text-color-muted: #bdbdbd;
             --primary-color: #FF3B30;
             --secondary-color: #50E3C2;
             --highlight-color: #F5A623;
             --highlight-color-rgb: 245, 166, 35;
-            --text-color: #FFFFFF;
-            --card-bg: rgba(15, 15, 15, 0.75);
+            --card-bg: rgba(25, 25, 25, 0.75);
             --card-border-color: rgba(255, 255, 255, 0.12);
+            --modal-bg: rgba(10, 10, 10, 0.9);
             --shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
             --highlight-shadow: 0 10px 30px rgba(var(--highlight-color-rgb), 0.4);
             --text-shadow-light: 0 1px 2px rgba(0,0,0,0.6);
             --text-shadow-heading: 0 2px 5px rgba(0,0,0,0.5);
-
             --skills-text-color-base: #C58917;
-            --skills-text-color-neon: #FFD700;
+            --skills-text-color-neon: #FFD700; /* Used for cursor and base text shadow */
             --skills-text-glass-highlight: rgba(255, 245, 200, 0.5);
-
-            /* --profile-border-start-color: var(--highlight-color); REMOVED - No longer needed for spinning border */
-            /* --profile-border-mid-color: var(--secondary-color); REMOVED */
-            /* --profile-border-end-color: var(--primary-color); REMOVED */
+            --footer-text-color: #bdbdbd;
+            --link-item-text-color: #FFFFFF;
+            --link-item-hover-text-color: #0A0A0A;
+            --link-item-hover-bg: rgba(var(--highlight-color-rgb), 0.9);
+            --badge-text-color: var(--highlight-color);
+            --badge-bg-color: rgba(var(--highlight-color-rgb), 0.15);
+            --badge-border-color: rgba(var(--highlight-color-rgb), 0.6);
+            --badge-hover-text-color: #0A0A0A;
+            --badge-hover-bg-color: var(--text-color-main);
+            --section-title-color: var(--highlight-color);
+            --project-card-bg: rgba(30, 30, 30, 0.85);
+            --project-card-border: rgba(255, 255, 255, 0.1);
+            --project-tag-bg: rgba(var(--highlight-color-rgb), 0.2);
+            --project-tag-text: var(--highlight-color);
+            --copy-icon-color: #a0a0a0;
+            --copy-icon-hover-color: var(--highlight-color);
+            --back-to-top-bg: rgba(var(--highlight-color-rgb), 0.8);
+            --back-to-top-hover-bg: rgba(var(--highlight-color-rgb), 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
+            background-color: var(--bg-color);
+            color: var(--text-color-main);
             line-height: 1.7;
             padding: 20px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background-color: #000; /* Fallback background color */
+            overflow-x: hidden;
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         #background-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            object-fit: cover;
+            position: fixed; right: 0; bottom: 0;
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto; z-index: -1; object-fit: cover;
         }
 
         .linktree-main-content {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 25px;
-            overflow-y: auto;
-            max-height: 100vh;
+            position: relative; z-index: 2;
+            width: 100%; display: flex; flex-direction: column;
+            align-items: center; padding: 25px;
+            overflow-y: auto; max-height: 100vh;
         }
 
-        @keyframes fadeInSlideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInSlideUpMore {
-            from { opacity: 0; transform: translateY(40px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
+        @keyframes fadeInSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInSlideUpMore { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes blinkCursor { from, to { background-color: transparent; } 50% { background-color: var(--skills-text-color-neon); } }
 
-        .profile {
-            text-align: center;
-            margin-bottom: 40px;
-            margin-top: 20px;
-            animation: fadeInSlideUp 0.8s ease-out forwards;
-            transition: transform 0.2s cubic-bezier(0.03, 0.98, 0.52, 0.99);
-        }
 
+        /* Profile Section */
+        .profile { text-align: center; margin-bottom: 40px; margin-top: 20px; animation: fadeInSlideUp 0.8s ease-out forwards; transition: transform 0.2s cubic-bezier(0.03, 0.98, 0.52, 0.99); }
         .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            background-size: cover;
-            background-position: center center;
-            margin-bottom: 25px;
+            width: 160px; height: 160px; border-radius: 50%;
+            background-size: cover; background-position: center center; background-repeat: no-repeat;
+            margin: 0 auto 20px auto; /* Centered and margin bottom */
             transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
-            box-shadow: 0 0 25px rgba(var(--highlight-color-rgb), 0.65), 0 0 40px rgba(var(--highlight-color-rgb), 0.3);
+            box-shadow: 0 0 15px rgba(var(--highlight-color-rgb), 0.5), 0 0 30px rgba(var(--highlight-color-rgb), 0.25);
             position: relative;
-            /* border: 5px solid transparent; Optional: if you want a static border around the pic */
         }
 
-        /* REMOVED SPINNING BORDER STYLES */
-        /*
-        @property --angle {
-          syntax: '<angle>';
-          initial-value: 0deg;
-          inherits: false;
-        }
-        .profile-pic::before {
-            content: "";
-            position: absolute;
-            inset: -5px;
-            border-radius: 50%;
-            background: conic-gradient(from var(--angle),
-                                    var(--profile-border-start-color),
-                                    var(--profile-border-mid-color),
-                                    var(--profile-border-end-color),
-                                    var(--profile-border-start-color));
-            z-index: -1;
-            animation: spinBorder 4s linear infinite;
-        }
-        @keyframes spinBorder {
-          to { --angle: 360deg; }
-        }
-        .profile:hover .profile-pic::before {
-            animation-duration: 2.5s;
-        }
-        */
-
-        .profile:hover .profile-pic {
-            transform: scale(1.12); /* Keep hover effect on pic itself */
-            box-shadow: 0 0 40px rgba(var(--highlight-color-rgb), 0.9), 0 0 60px rgba(var(--highlight-color-rgb), 0.5);
-        }
+        .profile:hover .profile-pic { transform: scale(1.12); box-shadow: 0 0 30px rgba(var(--highlight-color-rgb), 0.7), 0 0 50px rgba(var(--highlight-color-rgb), 0.4); }
 
         .profile h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(2rem, 5vw, 2.8rem);
-            margin-bottom: 10px;
-            font-weight: 700;
-            text-shadow: var(--text-shadow-heading);
-            letter-spacing: 0.8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            margin-bottom: 8px; font-weight: 700;
+            text-shadow: var(--text-shadow-heading); letter-spacing: 1px;
+            color: var(--text-color-main);
         }
-
         .profile .title {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--highlight-color);
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: clamp(1.2rem, 4vw, 1.7rem);
-            text-shadow: var(--text-shadow-light);
-            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif; color: var(--highlight-color);
+            font-weight: 600; margin-bottom: 10px; font-size: clamp(1.1rem, 4vw, 1.6rem);
+            text-shadow: var(--text-shadow-light); letter-spacing: 0.5px;
         }
-
         .profile .contact {
-            font-family: 'Roboto Mono', monospace;
-            color: #e0e0e0;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            margin-bottom: 25px;
-            text-shadow: none;
-            font-weight: 500;
+            font-family: 'Roboto Mono', monospace; color: var(--text-color-muted);
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem); margin-bottom: 15px;
+            text-shadow: none; font-weight: 500; display: inline-flex; align-items: center;
         }
+        .copy-icon {
+            margin-left: 10px; cursor: pointer; color: var(--copy-icon-color);
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .copy-icon:hover { color: var(--copy-icon-hover-color); transform: scale(1.2); }
+        #copy-feedback { font-size: 0.8rem; color: var(--secondary-color); margin-left: 8px; opacity: 0; transition: opacity 0.3s; }
+
 
         .profile .skills {
-            margin-top: 20px;
-            font-size: clamp(1.15rem, 3.5vw, 1.45rem);
-            color: var(--skills-text-color-base);
-            font-weight: 700;
-            text-shadow:
-                0 0 4px var(--skills-text-color-neon),
-                0 0 8px var(--skills-text-color-neon),
-                0 0 12px rgba(var(--skills-text-color-base), 0.7),
-                0px 1px 1.5px var(--skills-text-glass-highlight),
-                var(--text-shadow-light);
-            line-height: 1.6;
-            min-height: 2.5em;
+            margin-top: 20px; font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+            color: var(--skills-text-color-base); font-weight: 700;
+            text-shadow: 0 0 4px var(--skills-text-color-neon), 0 0 8px var(--skills-text-color-neon), 0 0 12px rgba(var(--skills-text-color-base), 0.7), 0px 1px 1.5px var(--skills-text-glass-highlight), var(--text-shadow-light);
+            line-height: 1.6; min-height: 2.5em; /* Ensures space for text */
+            position: relative; /* For cursor positioning if needed */
         }
-        .profile .skills p {
-            margin: 0;
-        }
-
+        .profile .skills p { display: inline; margin: 0; } /* Changed to inline for cursor */
         .typewriter-cursor {
             display: inline-block;
             background-color: var(--skills-text-color-neon);
-            width: 10px;
-            height: 1.45rem;
-            animation: blink 0.9s step-end infinite;
-            vertical-align: bottom;
+            width: 9px; /* Adjust width as needed */
+            height: 1.4rem; /* Match font size */
+            animation: blinkCursor 0.9s step-end infinite;
+            vertical-align: bottom; /* Align with text */
+            margin-left: 2px; /* Small space after text */
         }
 
-        @keyframes blink {
-            from, to { background-color: transparent; }
-            50% { background-color: var(--skills-text-color-neon); }
-        }
 
+        /* Links Section */
         .links {
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-            width: 100%;
-            max-width: 620px;
-            perspective: 1200px;
+            display: flex; flex-direction: column; gap: 20px;
+            width: 100%; max-width: 600px;
+            perspective: 1200px; margin-bottom: 50px;
         }
-
         .link-item {
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            padding: 22px 28px;
-            border-radius: 18px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 28px;
+            background-color: var(--card-bg); color: var(--link-item-text-color);
+            padding: 20px 25px; border-radius: 16px;
+            text-decoration: none; display: flex; align-items: center; gap: 25px;
             box-shadow: var(--shadow);
-            transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1),
-                        background-color 0.25s ease,
-                        box-shadow 0.25s ease,
-                        border-color 0.25s ease;
-            font-size: clamp(1rem, 2.8vw, 1.15rem);
-            position: relative;
-            border: 1.5px solid var(--card-border-color);
-            backdrop-filter: blur(6px) saturate(130%);
-            -webkit-backdrop-filter: blur(6px) saturate(130%);
-            opacity: 0;
-            animation: fadeInSlideUpMore 0.7s ease-out forwards;
+            transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+            font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+            position: relative; border: 1.5px solid var(--card-border-color);
+            backdrop-filter: blur(6px) saturate(130%); -webkit-backdrop-filter: blur(6px) saturate(130%);
+            opacity: 0; animation: fadeInSlideUpMore 0.7s ease-out forwards;
         }
-
         .link-item:hover {
-            transform: translateY(-12px) scale(1.06) rotateX(6deg) rotateY(-3deg);
-            box-shadow: var(--highlight-shadow), 0 0 20px rgba(var(--highlight-color-rgb), 0.3);
-            background-color: rgba(var(--highlight-color-rgb), 0.9);
-            color: #0A0A0A;
+            transform: translateY(-10px) scale(1.05) rotateX(5deg) rotateY(-2deg);
+            box-shadow: var(--highlight-shadow), 0 0 15px rgba(var(--highlight-color-rgb), 0.25);
+            background-color: var(--link-item-hover-bg);
+            color: var(--link-item-hover-text-color);
             border-color: rgba(var(--highlight-color-rgb), 0.95);
         }
-
         .link-item:hover .link-icon {
-            color: #0A0A0A;
-            transform: scale(1.2) rotate(-6deg);
+            color: var(--link-item-hover-text-color);
+            transform: scale(1.15) rotate(-5deg);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
         }
         .link-icon {
-            font-size: clamp(1.5rem, 4vw, 1.9rem);
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
             transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease;
-            width: 38px;
-            text-align: center;
+            width: 35px; text-align: center;
         }
         .link-text { flex: 1; font-weight: 600; text-shadow: none; }
-
         .badge {
-            background-color: rgba(var(--highlight-color-rgb), 0.15);
-            color: var(--highlight-color);
-            padding: 5px 14px;
-            border-radius: 18px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-left: auto;
-            border: 1px solid rgba(var(--highlight-color-rgb), 0.6);
+            background-color: var(--badge-bg-color); color: var(--badge-text-color);
+            padding: 4px 12px; border-radius: 16px; font-size: 0.7rem;
+            font-weight: 700; margin-left: auto;
+            border: 1px solid var(--badge-border-color);
             transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
         }
-        .link-item:hover .badge { background-color: var(--text-color); color: #0A0A0A; border-color: var(--text-color); }
+        .link-item:hover .badge { background-color: var(--badge-hover-bg-color); color: var(--badge-hover-text-color); border-color: var(--badge-hover-bg-color); }
 
-        footer {
-            margin-top: 70px;
-            padding-bottom: 30px;
-            text-align: center;
-            color: #bdbdbd;
-            font-size: 0.9rem;
-            text-shadow: var(--text-shadow-light);
-            animation: fadeInSlideUp 0.8s ease-out forwards;
+        /* About Me Modal */
+        .modal {
+            display: none; position: fixed; z-index: 1000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            overflow: auto; background-color: var(--modal-bg);
+            animation: fadeIn 0.3s ease-out;
+        }
+        .modal-content {
+            background-color: var(--card-bg); color: var(--text-color-main);
+            margin: 10% auto; padding: 30px; border-radius: 12px;
+            border: 1px solid var(--card-border-color);
+            width: 90%; max-width: 600px; position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: fadeInSlideUp 0.4s ease-out;
+        }
+        .modal-content h2 { color: var(--highlight-color); margin-bottom: 20px; font-size: 1.8rem; }
+        .modal-content p { margin-bottom: 15px; line-height: 1.8; font-size: 1.05rem; }
+        .close-modal-btn {
+            color: var(--text-color-muted); float: right; font-size: 28px; font-weight: bold;
+            transition: color 0.2s ease;
+        }
+        .close-modal-btn:hover, .close-modal-btn:focus { color: var(--primary-color); text-decoration: none; cursor: pointer; }
+
+        /* Projects Section */
+        .projects-section {
+            width: 100%; max-width: 900px;
+            margin: 40px auto; padding: 0 20px;
+            animation: fadeInSlideUp 0.8s ease-out 0.5s forwards;
             opacity: 0;
-            animation-delay: 1.3s; /* Stagger footer animation */
+        }
+        .projects-section h2 {
+            text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: var(--section-title-color); margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif; font-weight: 700;
+            text-shadow: var(--text-shadow-heading);
+        }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .project-card {
+            background-color: var(--project-card-bg);
+            border-radius: 12px; padding: 25px;
+            border: 1px solid var(--project-card-border);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; flex-direction: column;
+        }
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 28px rgba(0,0,0,0.25); }
+        .project-card h3 { font-size: 1.4rem; color: var(--highlight-color); margin-bottom: 10px; margin-top:0; }
+        .project-card .project-description { font-size: 0.95rem; margin-bottom: 15px; color: var(--text-color-muted); flex-grow: 1; }
+        .project-tags { margin-bottom: 20px; }
+        .project-tags .tag {
+            display: inline-block; background-color: var(--project-tag-bg);
+            color: var(--project-tag-text); padding: 5px 10px;
+            border-radius: 15px; font-size: 0.75rem; margin-right: 8px; margin-bottom: 8px;
+        }
+        .project-link {
+            display: inline-block; text-decoration: none;
+            color: var(--secondary-color); font-weight: 600;
+            transition: color 0.2s ease; margin-top: auto;
+        }
+        .project-link:hover { color: var(--highlight-color); }
+        .project-link i { margin-left: 5px; }
+
+
+        /* Footer */
+        footer {
+            margin-top: 50px; padding-bottom: 30px; text-align: center;
+            color: var(--footer-text-color); font-size: 0.9rem;
+            text-shadow: var(--text-shadow-light);
+            animation: fadeInSlideUp 0.8s ease-out forwards; opacity: 0; animation-delay: 1.3s;
         }
         footer a { color: var(--highlight-color); text-decoration: none; transition: color 0.3s ease; }
-        footer a:hover { color: var(--text-color); }
+        footer a:hover { color: var(--text-color-main); }
 
+
+        /* Back to Top Button */
+        #back-to-top {
+            display: none; position: fixed; bottom: 30px; right: 30px;
+            z-index: 99; border: none; outline: none;
+            background-color: var(--back-to-top-bg);
+            color: white; cursor: pointer; padding: 12px 15px;
+            border-radius: 50%; font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        #back-to-top:hover { background-color: var(--back-to-top-hover-bg); transform: scale(1.1); }
+
+
+        /* Media Queries */
         @media screen and (max-width: 768px) {
             .profile-pic { width: 140px; height: 140px; }
-            /* .profile-pic::before { inset: -4px; } REMOVED - No longer needed */
             .links { gap: 18px; max-width: 92%; }
             .link-item { padding: 18px 22px; gap: 20px; border-radius: 15px; }
+            .project-grid { grid-template-columns: 1fr; }
+            .modal-content { margin: 20% auto; width: 90%; }
         }
         @media screen and (max-width: 480px) {
             body { padding: 15px; }
-            .linktree-main-content { padding: 20px 15px; }
-            .profile-pic { width: 110px; height: 110px; margin-bottom: 20px; }
-            /* .profile-pic::before { inset: -3px; } REMOVED - No longer needed */
-            .profile h1 { letter-spacing: 0.5px; }
+            .linktree-main-content { padding: 20px 10px; }
+            .profile-pic { width: 110px; height: 110px; margin-bottom: 15px; }
+            .profile h1 { letter-spacing: 0.5px; font-size: clamp(1.8rem, 5vw, 2.4rem); }
+            .profile .title { font-size: clamp(1rem, 4vw, 1.4rem); }
+            .profile .skills { font-size: clamp(1rem, 3.5vw, 1.3rem); }
+            .typewriter-cursor { height: 1.3rem; }
             .links { gap: 15px; }
             .link-item { padding: 16px 18px; border-radius: 12px; gap: 15px; }
             .badge { padding: 4px 10px; font-size: 0.7rem; }
-            footer { margin-top: 50px; font-size: 0.8rem;}
-            .typewriter-cursor { height: 1.3rem; }
+            .projects-section h2 {font-size: clamp(1.6rem, 5vw, 2rem);}
+            .project-card h3 {font-size: 1.3rem;}
+            .modal-content { margin: 25% auto; padding: 20px; }
+            .modal-content h2 {font-size: 1.5rem;}
+            .modal-content p {font-size: 0.95rem;}
+            footer { margin-top: 40px; font-size: 0.8rem;}
+            #back-to-top { bottom: 20px; right: 20px; padding: 10px 13px; font-size: 1rem;}
         }
     </style>
 </head>
@@ -315,7 +317,11 @@
             <div class="profile-pic" style="background-image: url('PP.jpg');"></div>
             <h1>Syed Daniyal Haider Naqvi</h1>
             <div class="title">AI/ML Enthusiast | Developer</div>
-            <div class="contact">naqvidaniya598@gmail.com</div>
+            <div class="contact">
+                <span id="email-address">naqvidaniya598@gmail.com</span>
+                <i class="fas fa-copy copy-icon" id="copy-email-icon" title="Copy email"></i>
+                <span id="copy-feedback"></span>
+            </div>
             <div class="skills">
                 <p id="skills-text"></p><span class="typewriter-cursor"></span>
             </div>
@@ -335,35 +341,57 @@
                 <div class="link-text">View Resume</div>
                 <div class="badge">PDF</div>
             </a>
+            <a href="#" id="open-about-modal" class="link-item">
+                <div class="link-icon"><i class="fas fa-user-circle"></i></div>
+                <div class="link-text">About Me</div>
+            </a>
             <a href="mailto:naqvidaniya598@gmail.com" class="link-item" target="_blank">
                 <div class="link-icon"><i class="fas fa-envelope"></i></div>
                 <div class="link-text">Contact Me</div>
             </a>
         </div>
 
+        <section class="projects-section">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Brain Tumor Segmentation (YOLOv11 & SAM2)</h3>
+                    <p class="project-description">This project utilizes YOLOv11 object detection combined with SAM2 (Segment Anything Model) to accurately detect and segment brain tumors from MRI images. It aims for classification of tumor types (Glioma, Meningioma, Pituitary, No Tumor) and provides pixel-wise segmentation masks. The model was trained on the Roboflow Tumor Detection Dataset (v8).</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">YOLO</span><span class="tag">SAM</span><span class="tag">Machine Learning</span><span class="tag">Computer Vision</span><span class="tag">Medical Imaging</span>
+                    </div>
+                    <a href="https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Custom Database Management System</h3>
+                    <p class="project-description">Developed a Database Management System in C++ allowing users to manage data through tables (stored internally as CSV/TSV files). Features a custom case-insensitive query language supporting operations such as CREATE, DROP, SHOW, INSERT, SELECT, UPDATE, DELETE tables and data, along with HELP and EXIT commands.</p>
+                    <div class="project-tags">
+                        <span class="tag">C++</span><span class="tag">DBMS</span><span class="tag">Query Language</span><span class="tag">Data Structures</span><span class="tag">File Handling</span>
+                    </div>
+                    <a href="https://github.com/DaniyalSE/Database-Management-System-Implementation" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </section>
+
         <footer>
-            <p>© <span id="currentYear"></span> Syed Daniyal Haider Naqvi.</p>
+            <p>© <span id="currentYear"></span> Syed Daniyal Haider Naqvi. All rights reserved.</p>
         </footer>
     </div>
 
+    <div id="about-me-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-btn" id="close-about-modal">&times;</span>
+            <h2>About Me</h2>
+            <p>Hey! I'm Syed Daniyal Haider Naqvi, a Software Engineering student at COMSATS Islamabad, currently grinding every day to become a better version of myself. Between university assignments and my personal coding projects, I'm constantly learning and pushing my limits.</p>
+            <p>I'm deeply passionate about Artificial Intelligence and Machine Learning. Whether it's experimenting with new models or just reading about the latest breakthroughs, AI/ML always excites me. My goal is to not just be a good engineer, but someone who builds meaningful tech that solves real-world problems.</p>
+            <p>Still figuring things out, still learning — but always moving forward.</p>
+        </div>
+    </div>
+
+    <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        function typeWriterEffect() {
-            const skillsElement = document.getElementById('skills-text');
-            if (!skillsElement) return;
-            const textToType = "AI/ML | Deep Learning | Python | CV";
-            let i = 0;
-            const speed = 100; // Typing speed in ms
-            function type() {
-                if (i < textToType.length) {
-                    skillsElement.innerHTML += textToType.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            setTimeout(type, 1000); // Delay before typing starts
-        }
 
         function staggerLinkAnimations() {
             const linkItemsForStagger = document.querySelectorAll('.links .link-item');
@@ -374,7 +402,7 @@
 
         function profileParallax() {
             const profileSection = document.querySelector('.profile');
-            if (profileSection) {
+            if (profileSection && window.innerWidth >= 768) {
                 const parallaxIntensity = 0.008;
                 const maxOffset = 12;
                 const rotationIntensity = 0.05;
@@ -395,19 +423,128 @@
                     });
                 });
                  document.addEventListener('mouseleave', () => {
-                    requestAnimationFrame(() => {
-                        profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
-                     });
+                    if (window.innerWidth >= 768) {
+                        requestAnimationFrame(() => {
+                            profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
+                        });
+                    }
                 });
+            } else if (profileSection) {
+                 profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
             }
         }
 
+        const aboutModal = document.getElementById('about-me-modal');
+        const openAboutModalBtn = document.getElementById('open-about-modal');
+        const closeAboutModalBtn = document.getElementById('close-about-modal');
+
+        if (openAboutModalBtn && aboutModal && closeAboutModalBtn) {
+            openAboutModalBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                aboutModal.style.display = 'block';
+            });
+            closeAboutModalBtn.addEventListener('click', () => {
+                aboutModal.style.display = 'none';
+            });
+            window.addEventListener('click', (event) => {
+                if (event.target == aboutModal) {
+                    aboutModal.style.display = 'none';
+                }
+            });
+        }
+
+        const copyEmailIcon = document.getElementById('copy-email-icon');
+        const emailAddressSpan = document.getElementById('email-address');
+        const copyFeedbackSpan = document.getElementById('copy-feedback');
+
+        if (copyEmailIcon && emailAddressSpan && copyFeedbackSpan) {
+            copyEmailIcon.addEventListener('click', () => {
+                const email = emailAddressSpan.textContent;
+                navigator.clipboard.writeText(email).then(() => {
+                    copyFeedbackSpan.textContent = 'Copied!';
+                    copyFeedbackSpan.style.opacity = '1';
+                    setTimeout(() => {
+                        copyFeedbackSpan.style.opacity = '0';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy email: ', err);
+                    copyFeedbackSpan.textContent = 'Failed!';
+                    copyFeedbackSpan.style.opacity = '1';
+                     setTimeout(() => {
+                        copyFeedbackSpan.style.opacity = '0';
+                    }, 2000);
+                });
+            });
+        }
+
+        const backToTopButton = document.getElementById('back-to-top');
+        if (backToTopButton) {
+            window.onscroll = function() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    backToTopButton.style.display = "block";
+                } else {
+                    backToTopButton.style.display = "none";
+                }
+            };
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
+
+        // Typing and Deleting Animation
+        const skillsTextElement = document.getElementById('skills-text');
+        const textToAnimate = "AI/ML | Deep Learning | Python | CV";
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 120;
+        const deletingSpeed = 70;
+        const pauseBeforeDelete = 2000; // Pause after typing full text
+        const pauseBeforeTyping = 500; // Pause after deleting full text
+
+        function typeDeleteAnimation() {
+            if (!skillsTextElement) return;
+
+            const currentText = textToAnimate;
+            let displayedText = skillsTextElement.textContent;
+
+            if (isDeleting) {
+                // Deleting
+                displayedText = displayedText.substring(0, displayedText.length - 1);
+                skillsTextElement.textContent = displayedText;
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    setTimeout(typeDeleteAnimation, pauseBeforeTyping);
+                } else {
+                    setTimeout(typeDeleteAnimation, deletingSpeed);
+                }
+            } else {
+                // Typing
+                displayedText = currentText.substring(0, charIndex + 1);
+                skillsTextElement.textContent = displayedText;
+                charIndex++;
+
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(typeDeleteAnimation, pauseBeforeDelete);
+                } else {
+                    setTimeout(typeDeleteAnimation, typingSpeed);
+                }
+            }
+        }
+
+
         window.onload = function() {
-            typeWriterEffect();
             staggerLinkAnimations();
             profileParallax();
+            if (skillsTextElement) { // Start animation if element exists
+                setTimeout(typeDeleteAnimation, 500); // Initial delay before starting
+            }
         };
-
+         window.onresize = function() {
+            profileParallax();
+        };
     </script>
 </body>
 </html>
