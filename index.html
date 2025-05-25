@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Syed Daniyal Haider Naqvi - AI/ML Enthusiast and Developer. Explore my portfolio, projects in Machine Learning, Deep Learning, Python, and Computer Vision, and get in touch.">
     <title>Syed Daniyal Haider Naqvi | AI/ML Enthusiast</title>
     <link rel="icon" href="favicon.png" type="image/png">
 
@@ -21,13 +22,14 @@
             --highlight-color-rgb: 245, 166, 35;
             --card-bg: rgba(25, 25, 25, 0.75);
             --card-border-color: rgba(255, 255, 255, 0.12);
-            --modal-bg: rgba(10, 10, 10, 0.9);
+            --modal-bg-overlay: rgba(10, 10, 10, 0.9);
+            --modal-content-bg: #1C1C1E;
             --shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
             --highlight-shadow: 0 10px 30px rgba(var(--highlight-color-rgb), 0.4);
             --text-shadow-light: 0 1px 2px rgba(0,0,0,0.6);
             --text-shadow-heading: 0 2px 5px rgba(0,0,0,0.5);
             --skills-text-color-base: #C58917;
-            --skills-text-color-neon: #FFD700; /* Used for cursor and base text shadow */
+            --skills-text-color-neon: #FFD700;
             --skills-text-glass-highlight: rgba(255, 245, 200, 0.5);
             --footer-text-color: #bdbdbd;
             --link-item-text-color: #FFFFFF;
@@ -47,40 +49,140 @@
             --copy-icon-hover-color: var(--highlight-color);
             --back-to-top-bg: rgba(var(--highlight-color-rgb), 0.8);
             --back-to-top-hover-bg: rgba(var(--highlight-color-rgb), 1);
+            --theme-toggle-bg: rgba(255, 255, 255, 0.1);
+            --theme-toggle-icon-color: var(--highlight-color);
+            --theme-toggle-hover-bg: rgba(var(--highlight-color-rgb), 0.3);
+            --skip-link-bg: var(--highlight-color);
+            --skip-link-text: #000000;
+        }
+
+        body.light-theme {
+            --bg-color: #F4F7FC;
+            --text-color-main: #121212;
+            --text-color-muted: #555555;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-border-color: rgba(0, 0, 0, 0.1);
+            --modal-bg-overlay: rgba(200, 200, 200, 0.8);
+            --modal-content-bg: #FFFFFF;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --text-shadow-light: 0 1px 1px rgba(0,0,0,0.1);
+            --text-shadow-heading: 0 1px 3px rgba(0,0,0,0.15);
+            --skills-text-color-base: #B8860B;
+            --skills-text-color-neon: #DAA520;
+            --skills-text-glass-highlight: rgba(50, 50, 0, 0.3);
+            --footer-text-color: #555555;
+            --link-item-text-color: #121212;
+            --link-item-hover-text-color: #FFFFFF;
+            --link-item-hover-bg: rgba(var(--highlight-color-rgb), 0.95);
+            --badge-text-color: var(--highlight-color);
+            --badge-bg-color: rgba(var(--highlight-color-rgb), 0.1);
+            --badge-border-color: rgba(var(--highlight-color-rgb), 0.5);
+            --badge-hover-text-color: #FFFFFF;
+            --badge-hover-bg-color: var(--highlight-color);
+            --project-card-bg: #FFFFFF;
+            --project-card-border: rgba(0, 0, 0, 0.08);
+            --project-tag-bg: rgba(var(--highlight-color-rgb), 0.15);
+            --project-tag-text: var(--highlight-color);
+            --copy-icon-color: #777777;
+            --copy-icon-hover-color: var(--highlight-color);
+            --theme-toggle-bg: rgba(0, 0, 0, 0.05);
+            --theme-toggle-icon-color: var(--highlight-color);
+            --theme-toggle-hover-bg: rgba(var(--highlight-color-rgb), 0.2);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color-main);
             line-height: 1.7;
-            padding: 20px;
+            /* padding: 20px; Removed padding from body for full-width video */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             overflow-x: hidden;
+            /* background-size, position, repeat, attachment are for the video/image fallback */
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             position: relative;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
 
         #background-video {
-            position: fixed; right: 0; bottom: 0;
-            min-width: 100%; min-height: 100%;
-            width: auto; height: auto; z-index: -1; object-fit: cover;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto; /* Ensures video covers the area, might be "zoomed" if aspect ratio differs */
+            height: auto; /* Ensures video covers the area, might be "zoomed" if aspect ratio differs */
+            z-index: -1;
+            object-fit: cover; /* This makes the video cover the area, cropping if necessary */
+            transition: opacity 0.5s ease;
         }
+        body.light-theme #background-video {
+            opacity: 0.3;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 10px;
+            background-color: var(--skip-link-bg);
+            color: var(--skip-link-text);
+            padding: 10px 15px;
+            z-index: 9999;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 0 0 5px 5px;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--theme-toggle-bg);
+            color: var(--theme-toggle-icon-color);
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1001;
+            font-size: 1.2rem;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        #theme-toggle:hover {
+            background-color: var(--theme-toggle-hover-bg);
+            transform: scale(1.1);
+        }
+        #theme-toggle .fa-sun { display: none; }
+        body.light-theme #theme-toggle .fa-moon { display: none; }
+        body.light-theme #theme-toggle .fa-sun { display: inline-block; }
 
         .linktree-main-content {
             position: relative; z-index: 2;
             width: 100%; display: flex; flex-direction: column;
-            align-items: center; padding: 25px;
-            overflow-y: auto; max-height: 100vh;
+            align-items: center; padding: 25px; /* Padding applied here now */
+            /* Removed max-height and overflow-y to allow natural body scroll */
+            min-height: 100vh; /* Ensure it takes at least full viewport height */
         }
 
         @keyframes fadeInSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -88,20 +190,16 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes blinkCursor { from, to { background-color: transparent; } 50% { background-color: var(--skills-text-color-neon); } }
 
-
-        /* Profile Section */
         .profile { text-align: center; margin-bottom: 40px; margin-top: 20px; animation: fadeInSlideUp 0.8s ease-out forwards; transition: transform 0.2s cubic-bezier(0.03, 0.98, 0.52, 0.99); }
         .profile-pic {
             width: 160px; height: 160px; border-radius: 50%;
             background-size: cover; background-position: center center; background-repeat: no-repeat;
-            margin: 0 auto 20px auto; /* Centered and margin bottom */
+            margin: 0 auto 20px auto;
             transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
             box-shadow: 0 0 15px rgba(var(--highlight-color-rgb), 0.5), 0 0 30px rgba(var(--highlight-color-rgb), 0.25);
             position: relative;
         }
-
         .profile:hover .profile-pic { transform: scale(1.12); box-shadow: 0 0 30px rgba(var(--highlight-color-rgb), 0.7), 0 0 50px rgba(var(--highlight-color-rgb), 0.4); }
-
         .profile h1 {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2rem, 6vw, 3rem);
@@ -119,34 +217,31 @@
             font-size: clamp(0.9rem, 2.5vw, 1.1rem); margin-bottom: 15px;
             text-shadow: none; font-weight: 500; display: inline-flex; align-items: center;
         }
-        .copy-icon {
+        .copy-button {
+            background: none; border: none; padding: 0;
             margin-left: 10px; cursor: pointer; color: var(--copy-icon-color);
             transition: color 0.2s ease, transform 0.2s ease;
+            font-size: 1em;
+            vertical-align: middle;
         }
-        .copy-icon:hover { color: var(--copy-icon-hover-color); transform: scale(1.2); }
+        .copy-button:hover { color: var(--copy-icon-hover-color); transform: scale(1.2); }
         #copy-feedback { font-size: 0.8rem; color: var(--secondary-color); margin-left: 8px; opacity: 0; transition: opacity 0.3s; }
-
-
         .profile .skills {
             margin-top: 20px; font-size: clamp(1.1rem, 3.5vw, 1.4rem);
             color: var(--skills-text-color-base); font-weight: 700;
             text-shadow: 0 0 4px var(--skills-text-color-neon), 0 0 8px var(--skills-text-color-neon), 0 0 12px rgba(var(--skills-text-color-base), 0.7), 0px 1px 1.5px var(--skills-text-glass-highlight), var(--text-shadow-light);
-            line-height: 1.6; min-height: 2.5em; /* Ensures space for text */
-            position: relative; /* For cursor positioning if needed */
+            line-height: 1.6; min-height: 2.5em;
+            position: relative;
         }
-        .profile .skills p { display: inline; margin: 0; } /* Changed to inline for cursor */
+        .profile .skills p { display: inline; margin: 0; }
         .typewriter-cursor {
             display: inline-block;
             background-color: var(--skills-text-color-neon);
-            width: 9px; /* Adjust width as needed */
-            height: 1.4rem; /* Match font size */
+            width: 9px; height: 1.4rem;
             animation: blinkCursor 0.9s step-end infinite;
-            vertical-align: bottom; /* Align with text */
-            margin-left: 2px; /* Small space after text */
+            vertical-align: bottom; margin-left: 2px;
         }
 
-
-        /* Links Section */
         .links {
             display: flex; flex-direction: column; gap: 20px;
             width: 100%; max-width: 600px;
@@ -163,14 +258,15 @@
             backdrop-filter: blur(6px) saturate(130%); -webkit-backdrop-filter: blur(6px) saturate(130%);
             opacity: 0; animation: fadeInSlideUpMore 0.7s ease-out forwards;
         }
-        .link-item:hover {
+        .link-item:hover, .link-item:focus {
             transform: translateY(-10px) scale(1.05) rotateX(5deg) rotateY(-2deg);
             box-shadow: var(--highlight-shadow), 0 0 15px rgba(var(--highlight-color-rgb), 0.25);
             background-color: var(--link-item-hover-bg);
             color: var(--link-item-hover-text-color);
             border-color: rgba(var(--highlight-color-rgb), 0.95);
+            outline: none;
         }
-        .link-item:hover .link-icon {
+        .link-item:hover .link-icon, .link-item:focus .link-icon {
             color: var(--link-item-hover-text-color);
             transform: scale(1.15) rotate(-5deg);
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
@@ -188,37 +284,50 @@
             border: 1px solid var(--badge-border-color);
             transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
         }
-        .link-item:hover .badge { background-color: var(--badge-hover-bg-color); color: var(--badge-hover-text-color); border-color: var(--badge-hover-bg-color); }
+        .link-item:hover .badge, .link-item:focus .badge { background-color: var(--badge-hover-bg-color); color: var(--badge-hover-text-color); border-color: var(--badge-hover-bg-color); }
 
-        /* About Me Modal */
         .modal {
             display: none; position: fixed; z-index: 1000;
             left: 0; top: 0; width: 100%; height: 100%;
-            overflow: auto; background-color: var(--modal-bg);
+            overflow: auto; background-color: var(--modal-bg-overlay);
             animation: fadeIn 0.3s ease-out;
         }
         .modal-content {
-            background-color: var(--card-bg); color: var(--text-color-main);
-            margin: 10% auto; padding: 30px; border-radius: 12px;
+            background-color: var(--modal-content-bg); color: var(--text-color-main);
+            margin: 8% auto; padding: 30px 35px; border-radius: 12px;
             border: 1px solid var(--card-border-color);
-            width: 90%; max-width: 600px; position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 90%; max-width: 700px; position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.35);
             animation: fadeInSlideUp 0.4s ease-out;
         }
-        .modal-content h2 { color: var(--highlight-color); margin-bottom: 20px; font-size: 1.8rem; }
-        .modal-content p { margin-bottom: 15px; line-height: 1.8; font-size: 1.05rem; }
-        .close-modal-btn {
-            color: var(--text-color-muted); float: right; font-size: 28px; font-weight: bold;
-            transition: color 0.2s ease;
+        .modal-content h2, .modal-content h3 {
+            color: var(--highlight-color); margin-bottom: 20px; font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-family: 'Montserrat', sans-serif;
         }
-        .close-modal-btn:hover, .close-modal-btn:focus { color: var(--primary-color); text-decoration: none; cursor: pointer; }
+        .modal-content p { margin-bottom: 15px; line-height: 1.8; font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
+        .modal-content .project-modal-tags .tag {
+             display: inline-block; background-color: var(--project-tag-bg);
+             color: var(--project-tag-text); padding: 5px 10px;
+             border-radius: 15px; font-size: 0.75rem; margin-right: 8px; margin-bottom: 8px;
+        }
+        .modal-content .project-modal-link {
+            display: inline-block; text-decoration: none;
+            color: var(--secondary-color); font-weight: 600;
+            transition: color 0.2s ease; margin-top: 15px;
+        }
+        .modal-content .project-modal-link:hover { color: var(--highlight-color); }
 
-        /* Projects Section */
+        .close-modal-btn {
+            background: none; border: none;
+            color: var(--text-color-muted); float: right; font-size: 28px; font-weight: bold;
+            transition: color 0.2s ease, transform 0.2s ease;
+            cursor: pointer; padding: 0 5px; line-height: 1;
+        }
+        .close-modal-btn:hover, .close-modal-btn:focus { color: var(--primary-color); transform: scale(1.1); outline:none; }
+
         .projects-section {
             width: 100%; max-width: 900px;
             margin: 40px auto; padding: 0 20px;
-            animation: fadeInSlideUp 0.8s ease-out 0.5s forwards;
-            opacity: 0;
         }
         .projects-section h2 {
             text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem);
@@ -235,6 +344,15 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex; flex-direction: column;
         }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-visible.delay-1 { transition-delay: 0.1s; }
+        .reveal-visible.delay-2 { transition-delay: 0.2s; }
+        .reveal-visible.delay-3 { transition-delay: 0.3s; }
+
         .project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 28px rgba(0,0,0,0.25); }
         .project-card h3 { font-size: 1.4rem; color: var(--highlight-color); margin-bottom: 10px; margin-top:0; }
         .project-card .project-description { font-size: 0.95rem; margin-bottom: 15px; color: var(--text-color-muted); flex-grow: 1; }
@@ -244,16 +362,29 @@
             color: var(--project-tag-text); padding: 5px 10px;
             border-radius: 15px; font-size: 0.75rem; margin-right: 8px; margin-bottom: 8px;
         }
-        .project-link {
+        .project-actions { margin-top: auto; }
+        .project-link, .project-modal-trigger {
             display: inline-block; text-decoration: none;
             color: var(--secondary-color); font-weight: 600;
-            transition: color 0.2s ease; margin-top: auto;
+            transition: color 0.2s ease;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-right: 10px;
+            border: 1px solid transparent;
         }
-        .project-link:hover { color: var(--highlight-color); }
-        .project-link i { margin-left: 5px; }
+        .project-link:hover, .project-modal-trigger:hover,
+        .project-link:focus, .project-modal-trigger:focus {
+            color: var(--highlight-color);
+            background-color: rgba(var(--highlight-color-rgb), 0.1);
+            border-color: var(--highlight-color);
+            outline: none;
+        }
+        .project-link i, .project-modal-trigger i { margin-left: 5px; }
+        .project-modal-trigger {
+            cursor: pointer;
+            background: none;
+        }
 
-
-        /* Footer */
         footer {
             margin-top: 50px; padding-bottom: 30px; text-align: center;
             color: var(--footer-text-color); font-size: 0.9rem;
@@ -261,10 +392,8 @@
             animation: fadeInSlideUp 0.8s ease-out forwards; opacity: 0; animation-delay: 1.3s;
         }
         footer a { color: var(--highlight-color); text-decoration: none; transition: color 0.3s ease; }
-        footer a:hover { color: var(--text-color-main); }
+        footer a:hover, footer a:focus { color: var(--text-color-main); outline:none; }
 
-
-        /* Back to Top Button */
         #back-to-top {
             display: none; position: fixed; bottom: 30px; right: 30px;
             z-index: 99; border: none; outline: none;
@@ -274,19 +403,18 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             transition: background-color 0.2s ease, transform 0.2s ease;
         }
-        #back-to-top:hover { background-color: var(--back-to-top-hover-bg); transform: scale(1.1); }
+        #back-to-top:hover, #back-to-top:focus { background-color: var(--back-to-top-hover-bg); transform: scale(1.1); outline:none; }
 
-
-        /* Media Queries */
         @media screen and (max-width: 768px) {
             .profile-pic { width: 140px; height: 140px; }
             .links { gap: 18px; max-width: 92%; }
             .link-item { padding: 18px 22px; gap: 20px; border-radius: 15px; }
             .project-grid { grid-template-columns: 1fr; }
-            .modal-content { margin: 20% auto; width: 90%; }
+            .modal-content { margin: 15% auto; width: 90%; padding: 25px; }
+            #theme-toggle { top: 15px; right: 15px; }
         }
         @media screen and (max-width: 480px) {
-            body { padding: 15px; }
+            /* body { padding: 15px; } */ /* Padding removed from body, handled by .linktree-main-content */
             .linktree-main-content { padding: 20px 10px; }
             .profile-pic { width: 110px; height: 110px; margin-bottom: 15px; }
             .profile h1 { letter-spacing: 0.5px; font-size: clamp(1.8rem, 5vw, 2.4rem); }
@@ -298,28 +426,49 @@
             .badge { padding: 4px 10px; font-size: 0.7rem; }
             .projects-section h2 {font-size: clamp(1.6rem, 5vw, 2rem);}
             .project-card h3 {font-size: 1.3rem;}
-            .modal-content { margin: 25% auto; padding: 20px; }
-            .modal-content h2 {font-size: 1.5rem;}
+            .modal-content { margin: 20% auto; padding: 20px; }
+            .modal-content h2, .modal-content h3 {font-size: 1.5rem;}
             .modal-content p {font-size: 0.95rem;}
             footer { margin-top: 40px; font-size: 0.8rem;}
             #back-to-top { bottom: 20px; right: 20px; padding: 10px 13px; font-size: 1rem;}
+            #theme-toggle { font-size: 1rem; width: 40px; height: 40px; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <video autoplay muted loop id="background-video">
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <button id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <video autoplay muted loop playsinline preload="metadata" id="background-video" poster="poster.jpg">
+        <source src="Ani.webm" type="video/webm">
         <source src="Ani.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Your browser does not support the video tag. Consider using a modern browser or ensure video files are correctly placed.
     </video>
 
-    <div class="linktree-main-content">
-        <div class="profile">
+    <div class="linktree-main-content" id="main-content">
+        <div class="profile reveal">
             <div class="profile-pic" style="background-image: url('PP.jpg');"></div>
             <h1>Syed Daniyal Haider Naqvi</h1>
             <div class="title">AI/ML Enthusiast | Developer</div>
             <div class="contact">
                 <span id="email-address">naqvidaniya598@gmail.com</span>
-                <i class="fas fa-copy copy-icon" id="copy-email-icon" title="Copy email"></i>
+                <button type="button" id="copy-email-icon" class="copy-button" aria-label="Copy email address" title="Copy email">
+                    <i class="fas fa-copy"></i>
+                </button>
                 <span id="copy-feedback"></span>
             </div>
             <div class="skills">
@@ -328,223 +477,363 @@
         </div>
 
         <div class="links">
-            <a href="https://www.linkedin.com/in/syeddaniyalnaqvi/" class="link-item" target="_blank">
+            <a href="https://www.linkedin.com/in/syeddaniyalnaqvi/" class="link-item reveal" target="_blank" rel="noopener noreferrer">
                 <div class="link-icon"><i class="fab fa-linkedin-in"></i></div>
                 <div class="link-text">LinkedIn Profile</div>
             </a>
-            <a href="https://github.com/DaniyalSE" class="link-item" target="_blank">
+            <a href="https://github.com/DaniyalSE" class="link-item reveal" target="_blank" rel="noopener noreferrer">
                 <div class="link-icon"><i class="fab fa-github"></i></div>
                 <div class="link-text">GitHub Profile</div>
             </a>
-            <a href="https://drive.google.com/file/d/1VM9R6AureqCIAF5p3Hmr04GWhYPrdzXz/view?usp=sharing" class="link-item" target="_blank">
+            <a href="https://drive.google.com/file/d/1VM9R6AureqCIAF5p3Hmr04GWhYPrdzXz/view?usp=sharing" class="link-item reveal" target="_blank" rel="noopener noreferrer">
                 <div class="link-icon"><i class="fas fa-file-pdf"></i></div>
                 <div class="link-text">View Resume</div>
                 <div class="badge">PDF</div>
             </a>
-            <a href="#" id="open-about-modal" class="link-item">
+            <a href="#" id="open-about-modal" class="link-item reveal">
                 <div class="link-icon"><i class="fas fa-user-circle"></i></div>
                 <div class="link-text">About Me</div>
             </a>
-            <a href="mailto:naqvidaniya598@gmail.com" class="link-item" target="_blank">
+            <a href="mailto:naqvidaniya598@gmail.com" class="link-item reveal" target="_blank" rel="noopener noreferrer">
                 <div class="link-icon"><i class="fas fa-envelope"></i></div>
                 <div class="link-text">Contact Me</div>
             </a>
         </div>
 
-        <section class="projects-section">
+        <section class="projects-section reveal">
             <h2>My Projects</h2>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card reveal" data-project-id="project1">
                     <h3>Brain Tumor Segmentation (YOLOv11 & SAM2)</h3>
-                    <p class="project-description">This project utilizes YOLOv11 object detection combined with SAM2 (Segment Anything Model) to accurately detect and segment brain tumors from MRI images. It aims for classification of tumor types (Glioma, Meningioma, Pituitary, No Tumor) and provides pixel-wise segmentation masks. The model was trained on the Roboflow Tumor Detection Dataset (v8).</p>
+                    <p class="project-description">Utilizes YOLOv11 and SAM2 for brain tumor detection and segmentation from MRI images, classifying tumor types. Trained on Roboflow Tumor Detection Dataset.</p>
                     <div class="project-tags">
-                        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">YOLO</span><span class="tag">SAM</span><span class="tag">Machine Learning</span><span class="tag">Computer Vision</span><span class="tag">Medical Imaging</span>
+                        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">YOLO</span><span class="tag">SAM</span><span class="tag">ML</span>
                     </div>
-                    <a href="https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                    <div class="project-actions">
+                        <button class="project-modal-trigger" data-project-id-trigger="project1" aria-haspopup="dialog">Learn More <i class="fas fa-info-circle"></i></button>
+                        <a href="https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam" class="project-link" target="_blank" rel="noopener noreferrer">GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card reveal" data-project-id="project2">
                     <h3>Custom Database Management System</h3>
-                    <p class="project-description">Developed a Database Management System in C++ allowing users to manage data through tables (stored internally as CSV/TSV files). Features a custom case-insensitive query language supporting operations such as CREATE, DROP, SHOW, INSERT, SELECT, UPDATE, DELETE tables and data, along with HELP and EXIT commands.</p>
+                    <p class="project-description">A Java DBMS managing data via tables (CSV/TSV files) with a custom query language for operations like CREATE, INSERT, SELECT, UPDATE, DELETE.</p>
                     <div class="project-tags">
-                        <span class="tag">C++</span><span class="tag">DBMS</span><span class="tag">Query Language</span><span class="tag">Data Structures</span><span class="tag">File Handling</span>
+                        <span class="tag">Java</span><span class="tag">DBMS</span><span class="tag">Query Language</span><span class="tag">File Handling</span>
                     </div>
-                    <a href="https://github.com/DaniyalSE/Database-Management-System-Implementation" class="project-link" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                     <div class="project-actions">
+                        <button class="project-modal-trigger" data-project-id-trigger="project2" aria-haspopup="dialog">Learn More <i class="fas fa-info-circle"></i></button>
+                        <a href="https://github.com/DaniyalSE/Database-Management-System-Implementation" class="project-link" target="_blank" rel="noopener noreferrer">GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
-            </div>
+                </div>
         </section>
 
-        <footer>
+        <footer class="reveal">
             <p>© <span id="currentYear"></span> Syed Daniyal Haider Naqvi. All rights reserved.</p>
         </footer>
     </div>
 
-    <div id="about-me-modal" class="modal">
+    <div id="about-me-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="about-me-modal-title" tabindex="-1">
         <div class="modal-content">
-            <span class="close-modal-btn" id="close-about-modal">&times;</span>
-            <h2>About Me</h2>
-            <p>Hey! I'm Syed Daniyal Haider Naqvi, a Software Engineering student at COMSATS Islamabad, currently grinding every day to become a better version of myself. Between university assignments and my personal coding projects, I'm constantly learning and pushing my limits.</p>
+            <button class="close-modal-btn" id="close-about-modal" aria-label="Close about me dialog">&times;</button>
+            <h2 id="about-me-modal-title">About Me</h2>
+            <p>Hey! I'm Syed Daniyal Haider Naqvi, a Computer Science student at COMSATS Islamabad, currently grinding every day to become a better version of myself. Between university assignments and my personal coding projects, I'm constantly learning and pushing my limits.</p>
             <p>I'm deeply passionate about Artificial Intelligence and Machine Learning. Whether it's experimenting with new models or just reading about the latest breakthroughs, AI/ML always excites me. My goal is to not just be a good engineer, but someone who builds meaningful tech that solves real-world problems.</p>
             <p>Still figuring things out, still learning — but always moving forward.</p>
         </div>
     </div>
 
+    <div id="project-details-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" tabindex="-1">
+        <div class="modal-content">
+            <button class="close-modal-btn" id="close-project-modal" aria-label="Close project details dialog">&times;</button>
+            <h3 id="project-modal-title">Project Title</h3>
+            <div id="project-modal-tags" class="project-modal-tags">
+                </div>
+            <p id="project-modal-long-description">Detailed project description goes here.</p>
+            <a href="#" id="project-modal-github-link" class="project-modal-link" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+            </div>
+    </div>
+
+
     <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Global Variables & Elements ---
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const currentYearSpan = document.getElementById('currentYear');
+            let previouslyFocusedElement; 
 
-        function staggerLinkAnimations() {
-            const linkItemsForStagger = document.querySelectorAll('.links .link-item');
-            linkItemsForStagger.forEach((item, index) => {
-                item.style.animationDelay = `${0.8 + index * 0.12}s`;
-            });
-        }
-
-        function profileParallax() {
-            const profileSection = document.querySelector('.profile');
-            if (profileSection && window.innerWidth >= 768) {
-                const parallaxIntensity = 0.008;
-                const maxOffset = 12;
-                const rotationIntensity = 0.05;
-
-                document.addEventListener('mousemove', (e) => {
-                    if (window.innerWidth < 768) {
-                        requestAnimationFrame(() => {
-                            profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
-                        });
-                        return;
-                    }
-                    const x = (window.innerWidth / 2 - e.clientX) * parallaxIntensity;
-                    const y = (window.innerHeight / 2 - e.clientY) * parallaxIntensity;
-                    const clampedX = Math.max(-maxOffset, Math.min(maxOffset, x));
-                    const clampedY = Math.max(-maxOffset, Math.min(maxOffset, y));
-                    requestAnimationFrame(() => {
-                        profileSection.style.transform = `translate(${clampedX}px, ${clampedY}px) rotateX(${clampedY * rotationIntensity}deg) rotateY(${clampedX * -rotationIntensity}deg)`;
-                    });
-                });
-                 document.addEventListener('mouseleave', () => {
-                    if (window.innerWidth >= 768) {
-                        requestAnimationFrame(() => {
-                            profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
-                        });
-                    }
-                });
-            } else if (profileSection) {
-                 profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
-            }
-        }
-
-        const aboutModal = document.getElementById('about-me-modal');
-        const openAboutModalBtn = document.getElementById('open-about-modal');
-        const closeAboutModalBtn = document.getElementById('close-about-modal');
-
-        if (openAboutModalBtn && aboutModal && closeAboutModalBtn) {
-            openAboutModalBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                aboutModal.style.display = 'block';
-            });
-            closeAboutModalBtn.addEventListener('click', () => {
-                aboutModal.style.display = 'none';
-            });
-            window.addEventListener('click', (event) => {
-                if (event.target == aboutModal) {
-                    aboutModal.style.display = 'none';
+            // --- Theme Switcher ---
+            const applyTheme = (theme) => {
+                if (theme === 'light') {
+                    body.classList.add('light-theme');
+                    body.classList.remove('dark-theme'); 
+                } else {
+                    body.classList.remove('light-theme');
+                    body.classList.add('dark-theme'); 
                 }
+                localStorage.setItem('portfolioTheme', theme);
+                 if (themeToggle) themeToggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+            };
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = localStorage.getItem('portfolioTheme') || 'dark';
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    applyTheme(newTheme);
+                });
+            }
+            
+            const savedTheme = localStorage.getItem('portfolioTheme');
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else {
+                applyTheme('dark'); 
+            }
+
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            function staggerLinkAnimations() {
+                const linkItemsForStagger = document.querySelectorAll('.links .link-item.reveal'); 
+                linkItemsForStagger.forEach((item, index) => {
+                    // item.style.transitionDelay = `${0.1 + index * 0.08}s`; 
+                });
+            }
+
+            function profileParallax() {
+                const profileSection = document.querySelector('.profile');
+                if (profileSection && window.innerWidth >= 768) {
+                    const parallaxIntensity = 0.008;
+                    const maxOffset = 12;
+                    const rotationIntensity = 0.05;
+
+                    const handleMouseMove = (e) => {
+                        if (window.innerWidth < 768) {
+                            requestAnimationFrame(() => {
+                                profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
+                            });
+                            return;
+                        }
+                        const x = (window.innerWidth / 2 - e.clientX) * parallaxIntensity;
+                        const y = (window.innerHeight / 2 - e.clientY) * parallaxIntensity;
+                        const clampedX = Math.max(-maxOffset, Math.min(maxOffset, x));
+                        const clampedY = Math.max(-maxOffset, Math.min(maxOffset, y));
+                        requestAnimationFrame(() => {
+                            profileSection.style.transform = `translate(${clampedX}px, ${clampedY}px) rotateX(${clampedY * rotationIntensity}deg) rotateY(${clampedX * -rotationIntensity}deg)`;
+                        });
+                    };
+                    
+                    const handleMouseLeave = () => {
+                         if (window.innerWidth >= 768) {
+                            requestAnimationFrame(() => {
+                                profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
+                            });
+                        }
+                    };
+
+                    document.addEventListener('mousemove', handleMouseMove);
+                    document.addEventListener('mouseleave', handleMouseLeave);
+                
+                } else if (profileSection) {
+                    profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
+                }
+            }
+            
+            function setupModal(modalId, openBtnId, closeBtnId) {
+                const modal = document.getElementById(modalId);
+                const openBtn = document.getElementById(openBtnId);
+                const closeBtn = document.getElementById(closeBtnId);
+
+                if (!modal || !closeBtn) return; 
+
+                const openModal = () => {
+                    previouslyFocusedElement = document.activeElement;
+                    modal.style.display = 'block';
+                    modal.setAttribute('aria-hidden', 'false');
+                    closeBtn.focus(); 
+                };
+
+                const closeModal = () => {
+                    modal.style.display = 'none';
+                    modal.setAttribute('aria-hidden', 'true');
+                    if (previouslyFocusedElement) previouslyFocusedElement.focus();
+                };
+
+                if (openBtn) {
+                    openBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        openModal();
+                    });
+                }
+                closeBtn.addEventListener('click', closeModal);
+                
+                window.addEventListener('click', (event) => {
+                    if (event.target === modal) closeModal();
+                });
+                window.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && modal.style.display === 'block') closeModal();
+                });
+                return { openModal, closeModal }; 
+            }
+
+            setupModal('about-me-modal', 'open-about-modal', 'close-about-modal');
+
+            const projectDetailsModal = document.getElementById('project-details-modal');
+            const closeProjectModalBtn = document.getElementById('close-project-modal');
+            const projectModalFuncs = setupModal('project-details-modal', null, 'close-project-modal'); 
+
+            const projectData = { 
+                project1: {
+                    title: "Brain Tumor Segmentation (YOLOv11 & SAM2)",
+                    tags: ["Python", "PyTorch", "YOLOv11", "SAM2", "Machine Learning", "Computer Vision", "Medical Imaging", "Roboflow"],
+                    longDescription: "This project integrates the YOLOv11 object detection model with the Segment Anything Model (SAM2) to achieve precise detection and segmentation of brain tumors from MRI scans. The system is designed to classify tumors into categories such as Glioma, Meningioma, and Pituitary, or identify images with no tumor. Pixel-wise segmentation masks are generated for accurate tumor outlining. The model was meticulously trained and validated on the comprehensive Roboflow Tumor Detection Dataset (version 8), ensuring robustness and accuracy in diverse scenarios.",
+                    githubLink: "https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam"
+                },
+                project2: {
+                    title: "Custom Database Management System",
+                    tags: ["Java", "DBMS", "Query Language", "Data Structures", "File Handling", "System Design"],
+                    longDescription: "Developed a fully functional Database Management System from scratch using Java. This system allows users to create, manage, and query data stored in tables, which are internally represented as CSV or TSV files. It features a custom-designed, case-insensitive query language supporting a range of SQL-like operations including CREATE TABLE, DROP TABLE, SHOW TABLES, INSERT INTO, SELECT (with basic WHERE clauses), UPDATE, and DELETE. Additional utility commands like HELP and EXIT are also implemented for user convenience. The project emphasizes efficient data handling, parsing, and query execution.",
+                    githubLink: "https://github.com/DaniyalSE/Database-Management-System-Implementation"
+                }
+            };
+
+            document.querySelectorAll('.project-modal-trigger').forEach(button => {
+                button.addEventListener('click', () => {
+                    const projectId = button.getAttribute('data-project-id-trigger');
+                    const data = projectData[projectId];
+                    if (data && projectDetailsModal && projectModalFuncs) {
+                        document.getElementById('project-modal-title').textContent = data.title;
+                        document.getElementById('project-modal-long-description').textContent = data.longDescription;
+                        
+                        const tagsContainer = document.getElementById('project-modal-tags');
+                        tagsContainer.innerHTML = ''; 
+                        data.tags.forEach(tagText => {
+                            const tagEl = document.createElement('span');
+                            tagEl.className = 'tag';
+                            tagEl.textContent = tagText;
+                            tagsContainer.appendChild(tagEl);
+                        });
+
+                        const githubLinkEl = document.getElementById('project-modal-github-link');
+                        githubLinkEl.href = data.githubLink;
+                        if (data.githubLink) {
+                            githubLinkEl.style.display = 'inline-block';
+                        } else {
+                            githubLinkEl.style.display = 'none';
+                        }
+                        projectModalFuncs.openModal();
+                    }
+                });
             });
-        }
 
-        const copyEmailIcon = document.getElementById('copy-email-icon');
-        const emailAddressSpan = document.getElementById('email-address');
-        const copyFeedbackSpan = document.getElementById('copy-feedback');
+            const copyEmailIcon = document.getElementById('copy-email-icon');
+            const emailAddressSpan = document.getElementById('email-address');
+            const copyFeedbackSpan = document.getElementById('copy-feedback');
 
-        if (copyEmailIcon && emailAddressSpan && copyFeedbackSpan) {
-            copyEmailIcon.addEventListener('click', () => {
-                const email = emailAddressSpan.textContent;
-                navigator.clipboard.writeText(email).then(() => {
-                    copyFeedbackSpan.textContent = 'Copied!';
-                    copyFeedbackSpan.style.opacity = '1';
+            if (copyEmailIcon && emailAddressSpan && copyFeedbackSpan) {
+                copyEmailIcon.addEventListener('click', () => {
+                    const email = emailAddressSpan.textContent;
+                    const textArea = document.createElement("textarea");
+                    textArea.value = email;
+                    textArea.style.position = "fixed"; 
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        copyFeedbackSpan.textContent = 'Copied!';
+                        copyFeedbackSpan.style.opacity = '1';
+                    } catch (err) {
+                        console.error('Failed to copy email: ', err);
+                        copyFeedbackSpan.textContent = 'Failed!';
+                        copyFeedbackSpan.style.opacity = '1';
+                    }
+                    document.body.removeChild(textArea);
                     setTimeout(() => {
                         copyFeedbackSpan.style.opacity = '0';
                     }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy email: ', err);
-                    copyFeedbackSpan.textContent = 'Failed!';
-                    copyFeedbackSpan.style.opacity = '1';
-                     setTimeout(() => {
-                        copyFeedbackSpan.style.opacity = '0';
-                    }, 2000);
                 });
-            });
-        }
+            }
 
-        const backToTopButton = document.getElementById('back-to-top');
-        if (backToTopButton) {
-            window.onscroll = function() {
-                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                    backToTopButton.style.display = "block";
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                        backToTopButton.style.display = "block";
+                    } else {
+                        backToTopButton.style.display = "none";
+                    }
+                });
+                backToTopButton.addEventListener('click', () => {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+            }
+
+            const skillsTextElement = document.getElementById('skills-text');
+            const textToAnimate = "AI/ML | Deep Learning | Python | CV";
+            let charIndex = 0;
+            let isDeleting = false;
+            const typingSpeed = 120;
+            const deletingSpeed = 70;
+            const pauseBeforeDelete = 2000;
+            const pauseBeforeTyping = 500;
+
+            function typeDeleteAnimation() {
+                if (!skillsTextElement) return;
+                const currentText = textToAnimate;
+                let displayedText = skillsTextElement.textContent || "";
+
+                if (isDeleting) {
+                    displayedText = displayedText.substring(0, displayedText.length - 1);
+                    skillsTextElement.textContent = displayedText;
+                    charIndex--;
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        setTimeout(typeDeleteAnimation, pauseBeforeTyping);
+                    } else {
+                        setTimeout(typeDeleteAnimation, deletingSpeed);
+                    }
                 } else {
-                    backToTopButton.style.display = "none";
-                }
-            };
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
-        }
-
-        // Typing and Deleting Animation
-        const skillsTextElement = document.getElementById('skills-text');
-        const textToAnimate = "AI/ML | Deep Learning | Python | CV";
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 120;
-        const deletingSpeed = 70;
-        const pauseBeforeDelete = 2000; // Pause after typing full text
-        const pauseBeforeTyping = 500; // Pause after deleting full text
-
-        function typeDeleteAnimation() {
-            if (!skillsTextElement) return;
-
-            const currentText = textToAnimate;
-            let displayedText = skillsTextElement.textContent;
-
-            if (isDeleting) {
-                // Deleting
-                displayedText = displayedText.substring(0, displayedText.length - 1);
-                skillsTextElement.textContent = displayedText;
-                charIndex--;
-
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    setTimeout(typeDeleteAnimation, pauseBeforeTyping);
-                } else {
-                    setTimeout(typeDeleteAnimation, deletingSpeed);
-                }
-            } else {
-                // Typing
-                displayedText = currentText.substring(0, charIndex + 1);
-                skillsTextElement.textContent = displayedText;
-                charIndex++;
-
-                if (charIndex === currentText.length) {
-                    isDeleting = true;
-                    setTimeout(typeDeleteAnimation, pauseBeforeDelete);
-                } else {
-                    setTimeout(typeDeleteAnimation, typingSpeed);
+                    displayedText = currentText.substring(0, charIndex + 1);
+                    skillsTextElement.textContent = displayedText;
+                    charIndex++;
+                    if (charIndex === currentText.length) {
+                        isDeleting = true;
+                        setTimeout(typeDeleteAnimation, pauseBeforeDelete);
+                    } else {
+                        setTimeout(typeDeleteAnimation, typingSpeed);
+                    }
                 }
             }
-        }
 
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.1 }); 
 
-        window.onload = function() {
-            staggerLinkAnimations();
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            staggerLinkAnimations(); 
             profileParallax();
-            if (skillsTextElement) { // Start animation if element exists
-                setTimeout(typeDeleteAnimation, 500); // Initial delay before starting
+            if (skillsTextElement) {
+                setTimeout(typeDeleteAnimation, 800); 
             }
-        };
-         window.onresize = function() {
-            profileParallax();
-        };
+            
+            window.addEventListener('resize', () => {
+                profileParallax(); 
+            });
+        });
     </script>
 </body>
 </html>
