@@ -1,849 +1,690 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Syed Daniyal Haider Naqvi - AI/ML Enthusiast and Developer. Explore my portfolio, projects in Machine Learning, Deep Learning, Python, and Computer Vision, and get in touch.">
+    <meta name="description" content="Syed Daniyal Haider Naqvi - AI/ML Enthusiast and Developer. Explore my portfolio, projects in Machine Learning, Deep Learning, Python, and Computer Vision.">
     <title>Syed Daniyal Haider Naqvi | AI/ML Enthusiast</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <!-- Favicon (using an emoji as a placeholder) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPP51NRLEJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
-      gtag('config', 'G-RPP51NRLEJ');
-    </script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;600;700&family=Roboto+Mono:wght@400;500&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        :root {
-            /* Dark Theme (Default) */
-            --bg-color: #0A0A0A;
-            --text-color-main: #FFFFFF;
-            --text-color-muted: #bdbdbd;
-            --primary-color: #FF3B30;
-            --secondary-color: #50E3C2;
-            --highlight-color: #F5A623;
-            --highlight-color-rgb: 245, 166, 35;
-            --card-bg: rgba(25, 25, 25, 0.75);
-            --card-border-color: rgba(255, 255, 255, 0.12);
-            --modal-bg-overlay: rgba(10, 10, 10, 0.9);
-            --modal-content-bg: #1C1C1E;
-            --shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
-            --highlight-shadow: 0 10px 30px rgba(var(--highlight-color-rgb), 0.4);
-            --text-shadow-light: 0 1px 2px rgba(0,0,0,0.6);
-            --text-shadow-heading: 0 2px 5px rgba(0,0,0,0.5);
-            --skills-text-color-base: #C58917;
-            --skills-text-color-neon: #FFD700;
-            --skills-text-glass-highlight: rgba(255, 245, 200, 0.5);
-            --footer-text-color: #bdbdbd;
-            --link-item-text-color: #FFFFFF;
-            --link-item-hover-text-color: #0A0A0A;
-            --link-item-hover-bg: rgba(var(--highlight-color-rgb), 0.9);
-            --badge-text-color: var(--highlight-color);
-            --badge-bg-color: rgba(var(--highlight-color-rgb), 0.15);
-            --badge-border-color: rgba(var(--highlight-color-rgb), 0.6);
-            --badge-hover-text-color: #0A0A0A;
-            --badge-hover-bg-color: var(--text-color-main);
-            --section-title-color: var(--highlight-color);
-            --project-card-bg: rgba(30, 30, 30, 0.85);
-            --project-card-border: rgba(255, 255, 255, 0.1);
-            --project-tag-bg: rgba(var(--highlight-color-rgb), 0.2);
-            --project-tag-text: var(--highlight-color);
-            --copy-icon-color: #a0a0a0;
-            --copy-icon-hover-color: var(--highlight-color);
-            --back-to-top-bg: rgba(var(--highlight-color-rgb), 0.8);
-            --back-to-top-hover-bg: rgba(var(--highlight-color-rgb), 1);
-            --theme-toggle-bg: rgba(255, 255, 255, 0.1);
-            --theme-toggle-icon-color: var(--highlight-color);
-            --theme-toggle-hover-bg: rgba(var(--highlight-color-rgb), 0.3);
-            --skip-link-bg: var(--highlight-color);
-            --skip-link-text: #000000;
-        }
-
-        body.light-theme {
-            --bg-color: #F4F7FC;
-            --text-color-main: #121212;
-            --text-color-muted: #555555;
-            --card-bg: rgba(255, 255, 255, 0.85);
-            --card-border-color: rgba(0, 0, 0, 0.1);
-            --modal-bg-overlay: rgba(200, 200, 200, 0.8);
-            --modal-content-bg: #FFFFFF;
-            --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            --text-shadow-light: 0 1px 1px rgba(0,0,0,0.1);
-            --text-shadow-heading: 0 1px 3px rgba(0,0,0,0.15);
-            --skills-text-color-base: #B8860B;
-            --skills-text-color-neon: #DAA520;
-            --skills-text-glass-highlight: rgba(50, 50, 0, 0.3);
-            --footer-text-color: #555555;
-            --link-item-text-color: #121212;
-            --link-item-hover-text-color: #FFFFFF;
-            --link-item-hover-bg: rgba(var(--highlight-color-rgb), 0.95);
-            --badge-text-color: var(--highlight-color);
-            --badge-bg-color: rgba(var(--highlight-color-rgb), 0.1);
-            --badge-border-color: rgba(var(--highlight-color-rgb), 0.5);
-            --badge-hover-text-color: #FFFFFF;
-            --badge-hover-bg-color: var(--highlight-color);
-            --project-card-bg: #FFFFFF;
-            --project-card-border: rgba(0, 0, 0, 0.08);
-            --project-tag-bg: rgba(var(--highlight-color-rgb), 0.15);
-            --project-tag-text: var(--highlight-color);
-            --copy-icon-color: #777777;
-            --copy-icon-hover-color: var(--highlight-color);
-            --theme-toggle-bg: rgba(0, 0, 0, 0.05);
-            --theme-toggle-icon-color: var(--highlight-color);
-            --theme-toggle-hover-bg: rgba(var(--highlight-color-rgb), 0.2);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
+        /* Custom Styles & Tailwind Configuration */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
             scroll-behavior: smooth;
         }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color-main);
-            line-height: 1.7;
-            /* padding: 20px; Removed padding from body for full-width video */
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-            /* background-size, position, repeat, attachment are for the video/image fallback */
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            position: relative;
-            transition: background-color 0.4s ease, color 0.4s ease;
+        
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
         }
 
-        #background-video {
+        .font-roboto-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Video background */
+        #bg-video {
             position: fixed;
-            right: 0;
-            bottom: 0;
+            top: 50%;
+            left: 50%;
             min-width: 100%;
             min-height: 100%;
-            width: auto; /* Ensures video covers the area, might be "zoomed" if aspect ratio differs */
-            height: auto; /* Ensures video covers the area, might be "zoomed" if aspect ratio differs */
-            z-index: -1;
-            object-fit: cover; /* This makes the video cover the area, cropping if necessary */
-            transition: opacity 0.5s ease;
-        }
-        body.light-theme #background-video {
-            opacity: 0.3;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+            transition: 1s opacity;
         }
 
-        .skip-link {
-            position: absolute;
-            top: -100px;
-            left: 10px;
-            background-color: var(--skip-link-bg);
-            color: var(--skip-link-text);
-            padding: 10px 15px;
-            z-index: 9999;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 0 0 5px 5px;
-            transition: top 0.3s ease;
-        }
-        .skip-link:focus {
-            top: 0;
-        }
-
-        #theme-toggle {
+        .video-overlay {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--theme-toggle-bg);
-            color: var(--theme-toggle-icon-color);
-            border: none;
-            padding: 10px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        
+        html.light .video-overlay {
+            background-color: rgba(240, 242, 245, 0.7);
+        }
+
+        /* Uniform glow effect */
+        .uniform-glow {
             border-radius: 50%;
-            cursor: pointer;
-            z-index: 1001;
-            font-size: 1.2rem;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        #theme-toggle:hover {
-            background-color: var(--theme-toggle-hover-bg);
-            transform: scale(1.1);
-        }
-        #theme-toggle .fa-sun { display: none; }
-        body.light-theme #theme-toggle .fa-moon { display: none; }
-        body.light-theme #theme-toggle .fa-sun { display: inline-block; }
-
-        .linktree-main-content {
-            position: relative; z-index: 2;
-            width: 100%; display: flex; flex-direction: column;
-            align-items: center; padding: 25px; /* Padding applied here now */
-            /* Removed max-height and overflow-y to allow natural body scroll */
-            min-height: 100vh; /* Ensure it takes at least full viewport height */
+            box-shadow: 0 0 15px 5px rgba(245, 166, 35, 0.6);
+            animation: pulse-glow 3s infinite alternate;
         }
 
-        @keyframes fadeInSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInSlideUpMore { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes blinkCursor { from, to { background-color: transparent; } 50% { background-color: var(--skills-text-color-neon); } }
+        @keyframes pulse-glow {
+            from {
+                box-shadow: 0 0 15px 5px rgba(245, 166, 35, 0.5);
+            }
+            to {
+                box-shadow: 0 0 25px 10px rgba(245, 166, 35, 0.7);
+            }
+        }
 
-        .profile { text-align: center; margin-bottom: 40px; margin-top: 20px; animation: fadeInSlideUp 0.8s ease-out forwards; transition: transform 0.2s cubic-bezier(0.03, 0.98, 0.52, 0.99); }
-        .profile-pic {
-            width: 160px; height: 160px; border-radius: 50%;
-            background-size: cover; background-position: center center; background-repeat: no-repeat;
-            margin: 0 auto 20px auto;
-            transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
-            box-shadow: 0 0 15px rgba(var(--highlight-color-rgb), 0.5), 0 0 30px rgba(var(--highlight-color-rgb), 0.25);
-            position: relative;
+
+        /* Custom spotlight effect */
+        .spotlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 999;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(245, 166, 35, 0.15), transparent 40%);
+            transition: background 0.2s ease-out;
         }
-        .profile:hover .profile-pic { transform: scale(1.12); box-shadow: 0 0 30px rgba(var(--highlight-color-rgb), 0.7), 0 0 50px rgba(var(--highlight-color-rgb), 0.4); }
-        .profile h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 6vw, 3rem);
-            margin-bottom: 8px; font-weight: 700;
-            text-shadow: var(--text-shadow-heading); letter-spacing: 1px;
-            color: var(--text-color-main);
+        
+        html.light .spotlight {
+             background: radial-gradient(circle at var(--x) var(--y), rgba(245, 166, 35, 0.1), transparent 40%);
         }
-        .profile .title {
-            font-family: 'Montserrat', sans-serif; color: var(--highlight-color);
-            font-weight: 600; margin-bottom: 10px; font-size: clamp(1.1rem, 4vw, 1.6rem);
-            text-shadow: var(--text-shadow-light); letter-spacing: 0.5px;
+
+        /* Glassmorphism effect for cards */
+        .glass-card {
+            background: rgba(25, 25, 25, 0.6);
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .profile .contact {
-            font-family: 'Roboto Mono', monospace; color: var(--text-color-muted);
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem); margin-bottom: 15px;
-            text-shadow: none; font-weight: 500; display: inline-flex; align-items: center;
+        
+        html.light .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
-        .copy-button {
-            background: none; border: none; padding: 0;
-            margin-left: 10px; cursor: pointer; color: var(--copy-icon-color);
-            transition: color 0.2s ease, transform 0.2s ease;
-            font-size: 1em;
-            vertical-align: middle;
-        }
-        .copy-button:hover { color: var(--copy-icon-hover-color); transform: scale(1.2); }
-        #copy-feedback { font-size: 0.8rem; color: var(--secondary-color); margin-left: 8px; opacity: 0; transition: opacity 0.3s; }
-        .profile .skills {
-            margin-top: 20px; font-size: clamp(1.1rem, 3.5vw, 1.4rem);
-            color: var(--skills-text-color-base); font-weight: 700;
-            text-shadow: 0 0 4px var(--skills-text-color-neon), 0 0 8px var(--skills-text-color-neon), 0 0 12px rgba(var(--skills-text-color-base), 0.7), 0px 1px 1.5px var(--skills-text-glass-highlight), var(--text-shadow-light);
-            line-height: 1.6; min-height: 2.5em;
-            position: relative;
-        }
-        .profile .skills p { display: inline; margin: 0; }
+
+        /* Typewriter cursor blink animation */
         .typewriter-cursor {
             display: inline-block;
-            background-color: var(--skills-text-color-neon);
-            width: 9px; height: 1.4rem;
+            background-color: #F5A623;
+            width: 9px;
             animation: blinkCursor 0.9s step-end infinite;
-            vertical-align: bottom; margin-left: 2px;
+            vertical-align: bottom;
+            margin-left: 2px;
+        }
+        @keyframes blinkCursor {
+            from, to { background-color: transparent; }
+            50% { background-color: #F5A623; }
         }
 
-        .links {
-            display: flex; flex-direction: column; gap: 20px;
-            width: 100%; max-width: 600px;
-            perspective: 1200px; margin-bottom: 50px;
-        }
-        .link-item {
-            background-color: var(--card-bg); color: var(--link-item-text-color);
-            padding: 20px 25px; border-radius: 16px;
-            text-decoration: none; display: flex; align-items: center; gap: 25px;
-            box-shadow: var(--shadow);
-            transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-            font-size: clamp(0.95rem, 2.8vw, 1.1rem);
-            position: relative; border: 1.5px solid var(--card-border-color);
-            backdrop-filter: blur(6px) saturate(130%); -webkit-backdrop-filter: blur(6px) saturate(130%);
-            opacity: 0; animation: fadeInSlideUpMore 0.7s ease-out forwards;
-        }
-        .link-item:hover, .link-item:focus {
-            transform: translateY(-10px) scale(1.05) rotateX(5deg) rotateY(-2deg);
-            box-shadow: var(--highlight-shadow), 0 0 15px rgba(var(--highlight-color-rgb), 0.25);
-            background-color: var(--link-item-hover-bg);
-            color: var(--link-item-hover-text-color);
-            border-color: rgba(var(--highlight-color-rgb), 0.95);
-            outline: none;
-        }
-        .link-item:hover .link-icon, .link-item:focus .link-icon {
-            color: var(--link-item-hover-text-color);
-            transform: scale(1.15) rotate(-5deg);
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-        .link-icon {
-            font-size: clamp(1.4rem, 4vw, 1.8rem);
-            transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease;
-            width: 35px; text-align: center;
-        }
-        .link-text { flex: 1; font-weight: 600; text-shadow: none; }
-        .badge {
-            background-color: var(--badge-bg-color); color: var(--badge-text-color);
-            padding: 4px 12px; border-radius: 16px; font-size: 0.7rem;
-            font-weight: 700; margin-left: auto;
-            border: 1px solid var(--badge-border-color);
-            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-        }
-        .link-item:hover .badge, .link-item:focus .badge { background-color: var(--badge-hover-bg-color); color: var(--badge-hover-text-color); border-color: var(--badge-hover-bg-color); }
-
-        .modal {
-            display: none; position: fixed; z-index: 1000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            overflow: auto; background-color: var(--modal-bg-overlay);
-            animation: fadeIn 0.3s ease-out;
-        }
-        .modal-content {
-            background-color: var(--modal-content-bg); color: var(--text-color-main);
-            margin: 8% auto; padding: 30px 35px; border-radius: 12px;
-            border: 1px solid var(--card-border-color);
-            width: 90%; max-width: 700px; position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.35);
-            animation: fadeInSlideUp 0.4s ease-out;
-        }
-        .modal-content h2, .modal-content h3 {
-            color: var(--highlight-color); margin-bottom: 20px; font-size: clamp(1.5rem, 4vw, 1.8rem);
-            font-family: 'Montserrat', sans-serif;
-        }
-        .modal-content p { margin-bottom: 15px; line-height: 1.8; font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
-        .modal-content .project-modal-tags .tag {
-             display: inline-block; background-color: var(--project-tag-bg);
-             color: var(--project-tag-text); padding: 5px 10px;
-             border-radius: 15px; font-size: 0.75rem; margin-right: 8px; margin-bottom: 8px;
-        }
-        .modal-content .project-modal-link {
-            display: inline-block; text-decoration: none;
-            color: var(--secondary-color); font-weight: 600;
-            transition: color 0.2s ease; margin-top: 15px;
-        }
-        .modal-content .project-modal-link:hover { color: var(--highlight-color); }
-
-        .close-modal-btn {
-            background: none; border: none;
-            color: var(--text-color-muted); float: right; font-size: 28px; font-weight: bold;
-            transition: color 0.2s ease, transform 0.2s ease;
-            cursor: pointer; padding: 0 5px; line-height: 1;
-        }
-        .close-modal-btn:hover, .close-modal-btn:focus { color: var(--primary-color); transform: scale(1.1); outline:none; }
-
-        .projects-section {
-            width: 100%; max-width: 900px;
-            margin: 40px auto; padding: 0 20px;
-        }
-        .projects-section h2 {
-            text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem);
-            color: var(--section-title-color); margin-bottom: 30px;
-            font-family: 'Montserrat', sans-serif; font-weight: 700;
-            text-shadow: var(--text-shadow-heading);
-        }
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .project-card {
-            background-color: var(--project-card-bg);
-            border-radius: 12px; padding: 25px;
-            border: 1px solid var(--project-card-border);
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex; flex-direction: column;
-        }
-        .reveal-visible {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal-visible.delay-1 { transition-delay: 0.1s; }
-        .reveal-visible.delay-2 { transition-delay: 0.2s; }
-        .reveal-visible.delay-3 { transition-delay: 0.3s; }
-
-        .project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 28px rgba(0,0,0,0.25); }
-        .project-card h3 { font-size: 1.4rem; color: var(--highlight-color); margin-bottom: 10px; margin-top:0; }
-        .project-card .project-description { font-size: 0.95rem; margin-bottom: 15px; color: var(--text-color-muted); flex-grow: 1; }
-        .project-tags { margin-bottom: 20px; }
-        .project-tags .tag {
-            display: inline-block; background-color: var(--project-tag-bg);
-            color: var(--project-tag-text); padding: 5px 10px;
-            border-radius: 15px; font-size: 0.75rem; margin-right: 8px; margin-bottom: 8px;
-        }
-        .project-actions { margin-top: auto; }
-        .project-link, .project-modal-trigger {
-            display: inline-block; text-decoration: none;
-            color: var(--secondary-color); font-weight: 600;
-            transition: color 0.2s ease;
-            padding: 8px 12px;
-            border-radius: 8px;
-            margin-right: 10px;
-            border: 1px solid transparent;
-        }
-        .project-link:hover, .project-modal-trigger:hover,
-        .project-link:focus, .project-modal-trigger:focus {
-            color: var(--highlight-color);
-            background-color: rgba(var(--highlight-color-rgb), 0.1);
-            border-color: var(--highlight-color);
-            outline: none;
-        }
-        .project-link i, .project-modal-trigger i { margin-left: 5px; }
-        .project-modal-trigger {
-            cursor: pointer;
-            background: none;
+        /* Live status indicator animation */
+        .live-indicator { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
         }
 
-        footer {
-            margin-top: 50px; padding-bottom: 30px; text-align: center;
-            color: var(--footer-text-color); font-size: 0.9rem;
-            text-shadow: var(--text-shadow-light);
-            animation: fadeInSlideUp 0.8s ease-out forwards; opacity: 0; animation-delay: 1.3s;
-        }
-        footer a { color: var(--highlight-color); text-decoration: none; transition: color 0.3s ease; }
-        footer a:hover, footer a:focus { color: var(--text-color-main); outline:none; }
-
-        #back-to-top {
-            display: none; position: fixed; bottom: 30px; right: 30px;
-            z-index: 99; border: none; outline: none;
-            background-color: var(--back-to-top-bg);
-            color: white; cursor: pointer; padding: 12px 15px;
-            border-radius: 50%; font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-        #back-to-top:hover, #back-to-top:focus { background-color: var(--back-to-top-hover-bg); transform: scale(1.1); outline:none; }
-
-        @media screen and (max-width: 768px) {
-            .profile-pic { width: 140px; height: 140px; }
-            .links { gap: 18px; max-width: 92%; }
-            .link-item { padding: 18px 22px; gap: 20px; border-radius: 15px; }
-            .project-grid { grid-template-columns: 1fr; }
-            .modal-content { margin: 15% auto; width: 90%; padding: 25px; }
-            #theme-toggle { top: 15px; right: 15px; }
-        }
-        @media screen and (max-width: 480px) {
-            /* body { padding: 15px; } */ /* Padding removed from body, handled by .linktree-main-content */
-            .linktree-main-content { padding: 20px 10px; }
-            .profile-pic { width: 110px; height: 110px; margin-bottom: 15px; }
-            .profile h1 { letter-spacing: 0.5px; font-size: clamp(1.8rem, 5vw, 2.4rem); }
-            .profile .title { font-size: clamp(1rem, 4vw, 1.4rem); }
-            .profile .skills { font-size: clamp(1rem, 3.5vw, 1.3rem); }
-            .typewriter-cursor { height: 1.3rem; }
-            .links { gap: 15px; }
-            .link-item { padding: 16px 18px; border-radius: 12px; gap: 15px; }
-            .badge { padding: 4px 10px; font-size: 0.7rem; }
-            .projects-section h2 {font-size: clamp(1.6rem, 5vw, 2rem);}
-            .project-card h3 {font-size: 1.3rem;}
-            .modal-content { margin: 20% auto; padding: 20px; }
-            .modal-content h2, .modal-content h3 {font-size: 1.5rem;}
-            .modal-content p {font-size: 0.95rem;}
-            footer { margin-top: 40px; font-size: 0.8rem;}
-            #back-to-top { bottom: 20px; right: 20px; padding: 10px 13px; font-size: 1rem;}
-            #theme-toggle { font-size: 1rem; width: 40px; height: 40px; }
-        }
-
+        /* Scroll reveal animations */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .reveal.reveal-visible {
+        .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Modal transition styles */
+        .modal { transition: opacity 0.3s ease-in-out; }
+        .modal-content { transition: transform 0.3s ease-in-out; }
+
+        /* Skip link styles */
+        .skip-link {
+            position: absolute; top: -100px; left: 10px;
+            background-color: #F5A623; color: #000;
+            padding: 10px 15px; z-index: 9999;
+            text-decoration: none; font-weight: bold;
+            border-radius: 0 0 5px 5px; transition: top 0.3s ease;
+        }
+        .skip-link:focus { top: 0; }
+        
+        /* Career Timeline styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid #4a5568;
+            transition: border-color 0.3s ease;
+        }
+        .timeline-item:hover {
+            border-left-color: #F5A623;
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #4a5568;
+            border: 3px solid #1a202c;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.2);
+        }
+        html.light .timeline-dot {
+             border: 3px solid #f0f2f5;
+        }
+        .timeline-item.active .timeline-dot {
+            background-color: #F5A623;
+        }
     </style>
 </head>
-<body>
+<body class="bg-gray-950 text-gray-100 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-500">
+    <div class="video-overlay"></div>
+    <video autoplay muted loop id="bg-video">
+      <source src="Ani.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="spotlight"></div>
+
     <a href="#main-content" class="skip-link">Skip to Main Content</a>
 
-    <button id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-    </button>
+    <!-- Header Buttons -->
+    <div class="fixed top-4 right-4 z-50 flex items-center gap-2">
+        <button id="command-palette-mobile-trigger" aria-label="Open command palette" class="md:hidden w-12 h-12 rounded-full bg-gray-800/50 dark:bg-gray-200/10 text-amber-400 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:scale-110 transition-transform">
+            <i class="fas fa-terminal"></i>
+        </button>
+        <button id="theme-toggle" aria-label="Toggle theme" class="w-12 h-12 rounded-full bg-gray-800/50 dark:bg-gray-200/10 text-amber-400 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:scale-110 transition-transform">
+            <i class="fas fa-sun hidden"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
 
-    <video autoplay muted loop playsinline preload="metadata" id="background-video" poster="poster.jpg">
-        <source src="Ani.webm" type="video/webm">
-        <source src="Ani.mp4" type="video/mp4">
-        Your browser does not support the video tag. Consider using a modern browser or ensure video files are correctly placed.
-    </video>
-
-    <div class="linktree-main-content" id="main-content">
-        <div class="profile reveal">
-            <div class="profile-pic" style="background-image: url('PP.jpg');"></div>
-            <h1>Syed Daniyal Haider Naqvi</h1>
-            <div class="title">AI/ML Enthusiast | Developer</div>
-            <div class="contact">
+    <main id="main-content" class="relative z-10 container mx-auto px-4 py-8 md:py-16">
+        
+        <!-- Profile Section -->
+        <section class="text-center mb-16 md:mb-24 reveal">
+            <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 uniform-glow">
+                <img src="PP.jpg" alt="Syed Daniyal Haider Naqvi" class="w-full h-full rounded-full object-cover">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-2">Syed Daniyal Haider Naqvi</h1>
+            <div class="flex justify-center items-center gap-4 mb-4">
+                <p class="text-xl md:text-2xl text-amber-400">AI/ML Enthusiast | Developer</p>
+                <div class="group relative flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full live-indicator"></div>
+                    <span class="absolute bottom-full mb-2 w-max px-2 py-1 text-xs bg-gray-800 text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Available for opportunities</span>
+                </div>
+            </div>
+            <div class="font-roboto-mono text-gray-400 flex items-center justify-center gap-2 mb-6">
                 <span id="email-address">naqvidaniya598@gmail.com</span>
-                <button type="button" id="copy-email-icon" class="copy-button" aria-label="Copy email address" title="Copy email">
+                <button id="copy-email-btn" class="text-gray-500 hover:text-amber-400 transition-colors" aria-label="Copy email address">
                     <i class="fas fa-copy"></i>
                 </button>
-                <span id="copy-feedback"></span>
+                <span id="copy-feedback" class="text-green-400 text-sm opacity-0 transition-opacity">Copied!</span>
             </div>
-            <div class="skills">
-                <p id="skills-text"></p><span class="typewriter-cursor"></span>
+            <div class="text-lg md:text-xl text-amber-300 h-8 font-roboto-mono">
+                <span id="skills-text"></span><span class="typewriter-cursor h-7"></span>
             </div>
-        </div>
-
-        <div class="links">
-            <a href="https://www.linkedin.com/in/syeddaniyalnaqvi/" class="link-item reveal" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon"><i class="fab fa-linkedin-in"></i></div>
-                <div class="link-text">LinkedIn Profile</div>
-            </a>
-            <a href="https://github.com/DaniyalSE" class="link-item reveal" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon"><i class="fab fa-github"></i></div>
-                <div class="link-text">GitHub Profile</div>
-            </a>
-            <a href="https://drive.google.com/file/d/1VM9R6AureqCIAF5p3Hmr04GWhYPrdzXz/view?usp=sharing" class="link-item reveal" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon"><i class="fas fa-file-pdf"></i></div>
-                <div class="link-text">View Resume</div>
-                <div class="badge">PDF</div>
-            </a>
-            <a href="#" id="open-about-modal" class="link-item reveal">
-                <div class="link-icon"><i class="fas fa-user-circle"></i></div>
-                <div class="link-text">About Me</div>
-            </a>
-            <a href="mailto:naqvidaniya598@gmail.com" class="link-item reveal" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon"><i class="fas fa-envelope"></i></div>
-                <div class="link-text">Contact Me</div>
-            </a>
-        </div>
-
-        <section class="projects-section reveal">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card reveal" data-project-id="project1">
-                    <h3>Brain Tumor Segmentation (YOLOv11 & SAM2)</h3>
-                    <p class="project-description">Utilizes YOLOv11 and SAM2 for brain tumor detection and segmentation from MRI images, classifying tumor types. Trained on Roboflow Tumor Detection Dataset.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">YOLO</span><span class="tag">SAM</span><span class="tag">ML</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="project-modal-trigger" data-project-id-trigger="project1" aria-haspopup="dialog">Learn More <i class="fas fa-info-circle"></i></button>
-                        <a href="https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam" class="project-link" target="_blank" rel="noopener noreferrer">GitHub <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                <div class="project-card reveal" data-project-id="project2">
-                    <h3>Custom Database Management System</h3>
-                    <p class="project-description">A Java DBMS managing data via tables (CSV/TSV files) with a custom query language for operations like CREATE, INSERT, SELECT, UPDATE, DELETE.</p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span><span class="tag">DBMS</span><span class="tag">Query Language</span><span class="tag">File Handling</span>
-                    </div>
-                     <div class="project-actions">
-                        <button class="project-modal-trigger" data-project-id-trigger="project2" aria-haspopup="dialog">Learn More <i class="fas fa-info-circle"></i></button>
-                        <a href="https://github.com/DaniyalSE/Database-Management-System-Implementation" class="project-link" target="_blank" rel="noopener noreferrer">GitHub <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                </div>
         </section>
 
-        <footer class="reveal">
-            <p>© <span id="currentYear"></span> Syed Daniyal Haider Naqvi. All rights reserved.</p>
-        </footer>
-    </div>
+        <!-- Links Section -->
+        <section class="max-w-md mx-auto grid grid-cols-1 gap-6 mb-16 md:mb-24 reveal">
+            <a href="https://www.linkedin.com/in/syeddaniyalnaqvi/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-400/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1">
+                <i class="fab fa-linkedin-in w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
+                <span class="flex-grow font-semibold">LinkedIn Profile</span>
+                <i class="fas fa-arrow-right opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 transition-all duration-300"></i>
+            </a>
+            <a href="https://github.com/DaniyalSE" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-400/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1">
+                <i class="fab fa-github w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
+                <span class="flex-grow font-semibold">GitHub Profile</span>
+                <i class="fas fa-arrow-right opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 transition-all duration-300"></i>
+            </a>
+            <a href="https://drive.google.com/file/d/1VM9R6AureqCIAF5p3Hmr04GWhYPrdzXz/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-400/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1">
+                <i class="fas fa-file-pdf w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
+                <span class="flex-grow font-semibold">View Resume</span>
+                <span class="text-xs font-bold bg-amber-400/20 text-amber-300 group-hover:bg-black/80 group-hover:text-amber-300 px-3 py-1 rounded-full">PDF</span>
+            </a>
+            <button id="open-about-modal" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-400/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1 text-left">
+                <i class="fas fa-user-circle w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
+                <span class="flex-grow font-semibold">About Me</span>
+                <i class="fas fa-arrow-right opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 transition-all duration-300"></i>
+            </button>
+             <a href="#contact-section" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-400/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1">
+                <i class="fas fa-envelope w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
+                <span class="flex-grow font-semibold">Contact Me</span>
+                <i class="fas fa-arrow-down opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 transition-all duration-300"></i>
+            </a>
+        </section>
 
-    <div id="about-me-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="about-me-modal-title" tabindex="-1">
-        <div class="modal-content">
-            <button class="close-modal-btn" id="close-about-modal" aria-label="Close about me dialog">&times;</button>
-            <h2 id="about-me-modal-title">About Me</h2>
-            <p>Hey! I'm Syed Daniyal Haider Naqvi, a Computer Science student at COMSATS Islamabad, currently grinding every day to become a better version of myself. Between university assignments and my personal coding projects, I'm constantly learning and pushing my limits.</p>
-            <p>I'm deeply passionate about Artificial Intelligence and Machine Learning. Whether it's experimenting with new models or just reading about the latest breakthroughs, AI/ML always excites me. My goal is to not just be a good engineer, but someone who builds meaningful tech that solves real-world problems.</p>
-            <p>Still figuring things out, still learning — but always moving forward.</p>
+        <!-- Career Timeline Section -->
+        <section class="max-w-2xl mx-auto mb-16 md:mb-24 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Career Timeline</h2>
+            <div class="space-y-12">
+                <div class="timeline-item active">
+                    <div class="timeline-dot"></div>
+                    <p class="font-roboto-mono text-sm text-amber-400 mb-1">2024 - Present</p>
+                    <h3 class="text-xl font-bold text-white">BS in Computer Science</h3>
+                    <p class="text-gray-400">COMSATS University Islamabad</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <p class="font-roboto-mono text-sm text-gray-500 mb-1">Future</p>
+                    <h3 class="text-xl font-bold text-white">AI/ML Engineer</h3>
+                    <p class="text-gray-400">Seeking opportunities to build impactful AI solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="text-center mb-16 md:mb-24 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Technologies I Use</h2>
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-2xl mx-auto">
+                <div class="group flex flex-col items-center gap-2" title="Python">
+                    <i class="fab fa-python text-5xl text-gray-400 group-hover:text-sky-400 transition-colors duration-300 transform group-hover:scale-110"></i>
+                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Python</span>
+                </div>
+                <div class="group flex flex-col items-center gap-2" title="PyTorch">
+                     <svg class="h-12 w-12 text-gray-400 group-hover:text-red-500 transition-colors duration-300 transform group-hover:scale-110" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>PyTorch</title><path fill="currentColor" d="M4.693 6.393a.832.832 0 0 1-.46-.133.833.833 0 0 1-.399-.721V5.76c0-.406.214-.78.56-.98l9.122-5.267c.346-.2.775-.2 1.12 0l9.122 5.267c.346.2.56.575.56.98v.002a.833.833 0 0 1-1.292.624L13.24 3.012l-8.547 3.381zm15.021 9.518a.833.833 0 0 1 .43.145l.006.003v.001c.346.2.56.575.56.98v.001a.833.833 0 0 1-.627 1.22l-8.48 2.545-4.562-2.634 8.48-4.912a.833.833 0 0 1 .823-.028zM4.62 8.567l4.56 2.633v10.178L4.62 16.44V8.567zm-.833.208v7.665a.833.833 0 0 1 .46.765v.001a.833.833 0 0 1-.398.721l-.006.003-3.71 2.142a.833.833 0 0 1-1.229-.724v-7.665a.833.833 0 0 1 .46-.765l3.71-2.142a.833.833 0 0 1 .713-.001zM9.74 13.51l-4.12-2.38 4.12-2.38 4.12 2.38-4.12 2.38zm-.56-3.222a.56.56 0 1 0 0-1.12.56.56 0 0 0 0 1.12zm4.402-2.541a.56.56 0 1 0 0-1.12.56.56 0 0 0 0 1.12zm0 5.083a.56.56 0 1 0 0-1.12.56.56 0 0 0 0 1.12z"/></svg>
+                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">PyTorch</span>
+                </div>
+                <div class="group flex flex-col items-center gap-2" title="Java">
+                    <i class="fab fa-java text-5xl text-gray-400 group-hover:text-orange-500 transition-colors duration-300 transform group-hover:scale-110"></i>
+                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Java</span>
+                </div>
+                <div class="group flex flex-col items-center gap-2" title="Git & GitHub">
+                    <i class="fab fa-github text-5xl text-gray-400 group-hover:text-white transition-colors duration-300 transform group-hover:scale-110"></i>
+                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">GitHub</span>
+                </div>
+                <div class="group flex flex-col items-center gap-2" title="Docker">
+                    <i class="fab fa-docker text-5xl text-gray-400 group-hover:text-blue-500 transition-colors duration-300 transform group-hover:scale-110"></i>
+                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Docker</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Projects Section -->
+        <section id="projects-section" class="reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-8">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Featured Project -->
+                <div class="interactive-card md:col-span-2 glass-card rounded-2xl p-6 flex flex-col group border border-amber-400/50 transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-amber-500/10">
+                    <div class="flex items-center gap-3 mb-2">
+                         <h3 class="text-2xl font-bold text-amber-400">Brain Tumor Segmentation</h3>
+                         <span class="text-xs font-bold bg-amber-400/20 text-amber-300 px-3 py-1 rounded-full">Featured</span>
+                    </div>
+                    <p class="text-gray-400 dark:text-gray-300 mb-4">A high-impact project utilizing YOLOv11 and SAM2 for precise brain tumor detection and segmentation from MRI images. This system accurately classifies tumor types and generates pixel-wise masks, showcasing advanced application of computer vision in medical imaging.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs font-semibold bg-sky-400/20 text-sky-300 px-3 py-1 rounded-full">Python</span>
+                        <span class="text-xs font-semibold bg-red-400/20 text-red-300 px-3 py-1 rounded-full">PyTorch</span>
+                        <span class="text-xs font-semibold bg-green-400/20 text-green-300 px-3 py-1 rounded-full">YOLO</span>
+                        <span class="text-xs font-semibold bg-indigo-400/20 text-indigo-300 px-3 py-1 rounded-full">Computer Vision</span>
+                    </div>
+                    <div class="mt-auto flex items-center gap-4">
+                        <button class="project-modal-trigger font-semibold text-gray-300 hover:text-amber-400 transition-colors" data-project-id="project1">Learn More <i class="fas fa-info-circle ml-1"></i></button>
+                        <a href="https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-300 hover:text-amber-400 transition-colors">GitHub <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                </div>
+                <!-- Other Project -->
+                <div class="interactive-card glass-card rounded-2xl p-6 flex flex-col group hover:border-amber-400/50 transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-bold text-amber-400 mb-2">Custom DBMS</h3>
+                    <p class="text-gray-400 dark:text-gray-300 mb-4 flex-grow">A Java DBMS managing data via tables (CSV/TSV files) with a custom query language for CRUD operations.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs font-semibold bg-orange-400/20 text-orange-300 px-3 py-1 rounded-full">Java</span>
+                        <span class="text-xs font-semibold bg-purple-400/20 text-purple-300 px-3 py-1 rounded-full">System Design</span>
+                    </div>
+                    <div class="mt-auto flex items-center gap-4">
+                        <button class="project-modal-trigger font-semibold text-gray-300 hover:text-amber-400 transition-colors" data-project-id="project2">Learn More <i class="fas fa-info-circle ml-1"></i></button>
+                        <a href="https://github.com/DaniyalSE/Database-Management-System-Implementation" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-300 hover:text-amber-400 transition-colors">GitHub <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="max-w-2xl mx-auto mt-16 md:mt-24 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-8">Get In Touch</h2>
+            <form id="contact-form" class="glass-card rounded-2xl p-8 space-y-6">
+                <p class="text-center text-gray-400">Have a question or want to work together? Leave your details and I'll get back to you.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                        <input type="text" name="name" id="name" required class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-400">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                        <input type="email" name="email" id="email" required class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-400">
+                    </div>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                    <textarea name="message" id="message" rows="4" required class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-amber-500 text-black font-bold py-3 px-6 rounded-lg hover:bg-amber-400 transition-colors duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                    <span id="submit-text">Send Message</span>
+                    <i id="submit-spinner" class="fas fa-spinner fa-spin hidden"></i>
+                </button>
+                <div id="form-status" class="text-center text-sm pt-2"></div>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-16 md:mt-24 text-gray-500">
+            <p>&copy; <span id="currentYear"></span> Syed Daniyal Haider Naqvi. All rights reserved.</p>
+            <p class="text-xs mt-2 hidden md:block">Press <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">Ctrl</kbd> + <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">K</kbd> to open command palette.</p>
+        </footer>
+    </main>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-[-100px] right-4 z-50 w-12 h-12 rounded-full bg-amber-500/80 text-black backdrop-blur-sm flex items-center justify-center hover:scale-110 hover:bg-amber-500 transition-all duration-300" aria-label="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modals -->
+    <div id="about-me-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 opacity-0 pointer-events-none" aria-modal="true" role="dialog">
+        <div class="modal-content glass-card rounded-2xl p-8 max-w-2xl w-full transform scale-95">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-3xl font-bold text-amber-400">About Me</h2>
+                <button class="close-modal-btn text-2xl text-gray-500 hover:text-white transition-colors">&times;</button>
+            </div>
+            <p class="text-gray-300 mb-4">Hey! I'm Syed Daniyal Haider Naqvi, a Computer Science student at COMSATS Islamabad, currently grinding every day to become a better version of myself. Between university assignments and my personal coding projects, I'm constantly learning and pushing my limits.</p>
+            <p class="text-gray-300 mb-4">I'm deeply passionate about Artificial Intelligence and Machine Learning. Whether it's experimenting with new models or just reading about the latest breakthroughs, AI/ML always excites me. My goal is to not just be a good engineer, but someone who builds meaningful tech that solves real-world problems.</p>
+            <p class="text-gray-300">Still figuring things out, still learning — but always moving forward.</p>
+        </div>
+    </div>
+    <div id="project-details-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 opacity-0 pointer-events-none" aria-modal="true" role="dialog">
+        <div class="modal-content glass-card rounded-2xl p-8 max-w-2xl w-full transform scale-95">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="project-modal-title" class="text-3xl font-bold text-amber-400">Project Title</h3>
+                <button class="close-modal-btn text-2xl text-gray-500 hover:text-white transition-colors">&times;</button>
+            </div>
+            <div id="project-modal-tags" class="flex flex-wrap gap-2 mb-4"></div>
+            <p id="project-modal-long-description" class="text-gray-300 mb-6"></p>
+            <a href="#" id="project-modal-github-link" class="font-semibold text-amber-400 hover:text-amber-300 transition-colors" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-external-link-alt ml-1"></i></a>
         </div>
     </div>
 
-    <div id="project-details-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" tabindex="-1">
-        <div class="modal-content">
-            <button class="close-modal-btn" id="close-project-modal" aria-label="Close project details dialog">&times;</button>
-            <h3 id="project-modal-title">Project Title</h3>
-            <div id="project-modal-tags" class="project-modal-tags">
-                </div>
-            <p id="project-modal-long-description">Detailed project description goes here.</p>
-            <a href="#" id="project-modal-github-link" class="project-modal-link" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+    <!-- Command Palette -->
+    <div id="command-palette" class="modal fixed inset-0 z-50 flex items-start justify-center pt-20 bg-black/80 p-4 opacity-0 pointer-events-none" aria-modal="true" role="dialog">
+        <div id="command-palette-content" class="modal-content glass-card rounded-2xl w-full max-w-xl transform scale-95 font-roboto-mono">
+            <div class="p-4 border-b border-white/10">
+                <input id="command-input" type="text" placeholder="Type a command or search..." class="w-full bg-transparent text-white placeholder-gray-500 focus:outline-none">
             </div>
+            <ul id="command-list" class="p-2 max-h-80 overflow-y-auto">
+                <!-- Commands will be populated by JS -->
+            </ul>
+        </div>
     </div>
 
 
-    <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Global Variables & Elements ---
-            const themeToggle = document.getElementById('theme-toggle');
-            const body = document.body;
-            const currentYearSpan = document.getElementById('currentYear');
-            let previouslyFocusedElement; 
+    document.addEventListener('DOMContentLoaded', () => {
 
-            // --- Theme Switcher ---
-            const applyTheme = (theme) => {
-                if (theme === 'light') {
-                    body.classList.add('light-theme');
-                    body.classList.remove('dark-theme'); 
-                } else {
-                    body.classList.remove('light-theme');
-                    body.classList.add('dark-theme'); 
-                }
-                localStorage.setItem('portfolioTheme', theme);
-                 if (themeToggle) themeToggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
-            };
+        // --- SPOTLIGHT CURSOR EFFECT ---
+        const spotlight = document.querySelector('.spotlight');
+        document.addEventListener('mousemove', e => {
+            spotlight.style.setProperty('--x', e.clientX + 'px');
+            spotlight.style.setProperty('--y', e.clientY + 'px');
+        });
 
-            if (themeToggle) {
-                themeToggle.addEventListener('click', () => {
-                    const currentTheme = localStorage.getItem('portfolioTheme') || 'dark';
-                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                    applyTheme(newTheme);
-                });
+        // --- THEME SWITCHER ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = themeToggle.querySelector('.fa-sun');
+        const moonIcon = themeToggle.querySelector('.fa-moon');
+        const videoOverlay = document.querySelector('.video-overlay');
+
+        const applyTheme = (theme) => {
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme === 'light');
+            sunIcon.classList.toggle('hidden', theme === 'dark');
+            moonIcon.classList.toggle('hidden', theme === 'light');
+            localStorage.setItem('portfolioTheme', theme);
+        };
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('portfolioTheme') || 'dark';
+            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+        applyTheme(localStorage.getItem('portfolioTheme') || 'dark');
+
+        // --- TYPEWRITER EFFECT ---
+        const skillsTextElement = document.getElementById('skills-text');
+        const skills = ["AI/ML", "Deep Learning", "Python", "Computer Vision"];
+        let skillIndex = 0, charIndex = 0, isDeleting = false;
+        function typeWriter() {
+            if (!skillsTextElement) return;
+            const currentSkill = skills[skillIndex];
+            let speed = isDeleting ? 70 : 120;
+            skillsTextElement.textContent = currentSkill.substring(0, isDeleting ? --charIndex : ++charIndex);
+            if (!isDeleting && charIndex === currentSkill.length + 1) {
+                isDeleting = true; speed = 2000;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false; skillIndex = (skillIndex + 1) % skills.length; speed = 500;
             }
-            
-            const savedTheme = localStorage.getItem('portfolioTheme');
-            if (savedTheme) {
-                applyTheme(savedTheme);
-            } else {
-                applyTheme('dark'); 
-            }
+            setTimeout(typeWriter, speed);
+        }
+        setTimeout(typeWriter, 800);
 
-            if (currentYearSpan) {
-                currentYearSpan.textContent = new Date().getFullYear();
-            }
-
-            function staggerLinkAnimations() {
-                const linkItemsForStagger = document.querySelectorAll('.links .link-item.reveal'); 
-                linkItemsForStagger.forEach((item, index) => {
-                    // item.style.transitionDelay = `${0.1 + index * 0.08}s`; 
-                });
-            }
-
-            function profileParallax() {
-                const profileSection = document.querySelector('.profile');
-                if (profileSection && window.innerWidth >= 768) {
-                    const parallaxIntensity = 0.008;
-                    const maxOffset = 12;
-                    const rotationIntensity = 0.05;
-
-                    const handleMouseMove = (e) => {
-                        if (window.innerWidth < 768) {
-                            requestAnimationFrame(() => {
-                                profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
-                            });
-                            return;
-                        }
-                        const x = (window.innerWidth / 2 - e.clientX) * parallaxIntensity;
-                        const y = (window.innerHeight / 2 - e.clientY) * parallaxIntensity;
-                        const clampedX = Math.max(-maxOffset, Math.min(maxOffset, x));
-                        const clampedY = Math.max(-maxOffset, Math.min(maxOffset, y));
-                        requestAnimationFrame(() => {
-                            profileSection.style.transform = `translate(${clampedX}px, ${clampedY}px) rotateX(${clampedY * rotationIntensity}deg) rotateY(${clampedX * -rotationIntensity}deg)`;
-                        });
-                    };
-                    
-                    const handleMouseLeave = () => {
-                         if (window.innerWidth >= 768) {
-                            requestAnimationFrame(() => {
-                                profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
-                            });
-                        }
-                    };
-
-                    document.addEventListener('mousemove', handleMouseMove);
-                    document.addEventListener('mouseleave', handleMouseLeave);
-                
-                } else if (profileSection) {
-                    profileSection.style.transform = 'translate(0px, 0px) rotateX(0deg) rotateY(0deg)';
-                }
-            }
-            
-            function setupModal(modalId, openBtnId, closeBtnId) {
-                const modal = document.getElementById(modalId);
-                const openBtn = document.getElementById(openBtnId);
-                const closeBtn = document.getElementById(closeBtnId);
-
-                if (!modal || !closeBtn) return; 
-
-                const openModal = () => {
-                    previouslyFocusedElement = document.activeElement;
-                    modal.style.display = 'block';
-                    modal.setAttribute('aria-hidden', 'false');
-                    closeBtn.focus(); 
-                };
-
-                const closeModal = () => {
-                    modal.style.display = 'none';
-                    modal.setAttribute('aria-hidden', 'true');
-                    if (previouslyFocusedElement) previouslyFocusedElement.focus();
-                };
-
-                if (openBtn) {
-                    openBtn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        openModal();
-                    });
-                }
-                closeBtn.addEventListener('click', closeModal);
-                
-                window.addEventListener('click', (event) => {
-                    if (event.target === modal) closeModal();
-                });
-                window.addEventListener('keydown', (event) => {
-                    if (event.key === 'Escape' && modal.style.display === 'block') closeModal();
-                });
-                return { openModal, closeModal }; 
-            }
-
-            setupModal('about-me-modal', 'open-about-modal', 'close-about-modal');
-
-            const projectDetailsModal = document.getElementById('project-details-modal');
-            const closeProjectModalBtn = document.getElementById('close-project-modal');
-            const projectModalFuncs = setupModal('project-details-modal', null, 'close-project-modal'); 
-
-            const projectData = { 
-                project1: {
-                    title: "Brain Tumor Segmentation (YOLOv11 & SAM2)",
-                    tags: ["Python", "PyTorch", "YOLOv11", "SAM2", "Machine Learning", "Computer Vision", "Medical Imaging", "Roboflow"],
-                    longDescription: "This project integrates the YOLOv11 object detection model with the Segment Anything Model (SAM2) to achieve precise detection and segmentation of brain tumors from MRI scans. The system is designed to classify tumors into categories such as Glioma, Meningioma, and Pituitary, or identify images with no tumor. Pixel-wise segmentation masks are generated for accurate tumor outlining. The model was meticulously trained and validated on the comprehensive Roboflow Tumor Detection Dataset (version 8), ensuring robustness and accuracy in diverse scenarios.",
-                    githubLink: "https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam"
-                },
-                project2: {
-                    title: "Custom Database Management System",
-                    tags: ["Java", "DBMS", "Query Language", "Data Structures", "File Handling", "System Design"],
-                    longDescription: "Developed a fully functional Database Management System from scratch using Java. This system allows users to create, manage, and query data stored in tables, which are internally represented as CSV or TSV files. It features a custom-designed, case-insensitive query language supporting a range of SQL-like operations including CREATE TABLE, DROP TABLE, SHOW TABLES, INSERT INTO, SELECT (with basic WHERE clauses), UPDATE, and DELETE. Additional utility commands like HELP and EXIT are also implemented for user convenience. The project emphasizes efficient data handling, parsing, and query execution.",
-                    githubLink: "https://github.com/DaniyalSE/Database-Management-System-Implementation"
-                }
-            };
-
-            document.querySelectorAll('.project-modal-trigger').forEach(button => {
-                button.addEventListener('click', () => {
-                    const projectId = button.getAttribute('data-project-id-trigger');
-                    const data = projectData[projectId];
-                    if (data && projectDetailsModal && projectModalFuncs) {
-                        document.getElementById('project-modal-title').textContent = data.title;
-                        document.getElementById('project-modal-long-description').textContent = data.longDescription;
-                        
-                        const tagsContainer = document.getElementById('project-modal-tags');
-                        tagsContainer.innerHTML = ''; 
-                        data.tags.forEach(tagText => {
-                            const tagEl = document.createElement('span');
-                            tagEl.className = 'tag';
-                            tagEl.textContent = tagText;
-                            tagsContainer.appendChild(tagEl);
-                        });
-
-                        const githubLinkEl = document.getElementById('project-modal-github-link');
-                        githubLinkEl.href = data.githubLink;
-                        if (data.githubLink) {
-                            githubLinkEl.style.display = 'inline-block';
-                        } else {
-                            githubLinkEl.style.display = 'none';
-                        }
-                        projectModalFuncs.openModal();
-                    }
-                });
-            });
-
-            const copyEmailIcon = document.getElementById('copy-email-icon');
-            const emailAddressSpan = document.getElementById('email-address');
-            const copyFeedbackSpan = document.getElementById('copy-feedback');
-
-            if (copyEmailIcon && emailAddressSpan && copyFeedbackSpan) {
-                copyEmailIcon.addEventListener('click', () => {
-                    const email = emailAddressSpan.textContent;
-                    const textArea = document.createElement("textarea");
-                    textArea.value = email;
-                    textArea.style.position = "fixed"; 
-                    document.body.appendChild(textArea);
-                    textArea.focus();
-                    textArea.select();
-                    try {
-                        document.execCommand('copy');
-                        copyFeedbackSpan.textContent = 'Copied!';
-                        copyFeedbackSpan.style.opacity = '1';
-                    } catch (err) {
-                        console.error('Failed to copy email: ', err);
-                        copyFeedbackSpan.textContent = 'Failed!';
-                        copyFeedbackSpan.style.opacity = '1';
-                    }
-                    document.body.removeChild(textArea);
-                    setTimeout(() => {
-                        copyFeedbackSpan.style.opacity = '0';
-                    }, 2000);
-                });
-            }
-
-            const backToTopButton = document.getElementById('back-to-top');
-            if (backToTopButton) {
-                window.addEventListener('scroll', () => {
-                    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                        backToTopButton.style.display = "block";
-                    } else {
-                        backToTopButton.style.display = "none";
-                    }
-                });
-                backToTopButton.addEventListener('click', () => {
-                    window.scrollTo({top: 0, behavior: 'smooth'});
-                });
-            }
-
-            const skillsTextElement = document.getElementById('skills-text');
-            const textToAnimate = "AI/ML | Deep Learning | Python | CV";
-            let charIndex = 0;
-            let isDeleting = false;
-            const typingSpeed = 120;
-            const deletingSpeed = 70;
-            const pauseBeforeDelete = 2000;
-            const pauseBeforeTyping = 500;
-
-            function typeDeleteAnimation() {
-                if (!skillsTextElement) return;
-                const currentText = textToAnimate;
-                let displayedText = skillsTextElement.textContent || "";
-
-                if (isDeleting) {
-                    displayedText = displayedText.substring(0, displayedText.length - 1);
-                    skillsTextElement.textContent = displayedText;
-                    charIndex--;
-                    if (charIndex === 0) {
-                        isDeleting = false;
-                        setTimeout(typeDeleteAnimation, pauseBeforeTyping);
-                    } else {
-                        setTimeout(typeDeleteAnimation, deletingSpeed);
-                    }
-                } else {
-                    displayedText = currentText.substring(0, charIndex + 1);
-                    skillsTextElement.textContent = displayedText;
-                    charIndex++;
-                    if (charIndex === currentText.length) {
-                        isDeleting = true;
-                        setTimeout(typeDeleteAnimation, pauseBeforeDelete);
-                    } else {
-                        setTimeout(typeDeleteAnimation, typingSpeed);
-                    }
-                }
-            }
-
-            const revealElements = document.querySelectorAll('.reveal');
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('reveal-visible');
-                        observer.unobserve(entry.target); 
-                    }
-                });
-            }, { threshold: 0.1 }); 
-
-            revealElements.forEach(el => {
-                revealObserver.observe(el);
-            });
-
-            staggerLinkAnimations(); 
-            profileParallax();
-            if (skillsTextElement) {
-                setTimeout(typeDeleteAnimation, 800); 
-            }
-            
-            window.addEventListener('resize', () => {
-                profileParallax(); 
+        // --- EMAIL COPY FUNCTIONALITY ---
+        document.getElementById('copy-email-btn').addEventListener('click', () => {
+            const email = document.getElementById('email-address').textContent;
+            navigator.clipboard.writeText(email).then(() => {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.style.opacity = '1';
+                setTimeout(() => { feedback.style.opacity = '0'; }, 2000);
             });
         });
+
+        // --- INTERACTIVE CARD TILT EFFECT ---
+        document.querySelectorAll('.interactive-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const { left, top, width, height } = card.getBoundingClientRect();
+                const x = e.clientX - left;
+                const y = e.clientY - top;
+                const rotateX = (y - height / 2) / (height/2) * -8;
+                const rotateY = (x - width / 2) / (width/2) * 8;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                card.style.boxShadow = '0 40px 50px -20px rgba(0,0,0,0.4)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                card.style.boxShadow = 'none';
+            });
+        });
+        
+        // --- MODAL HANDLING ---
+        const projectData = {
+            project1: {
+                title: "Brain Tumor Segmentation (YOLOv11 & SAM2)",
+                tags: ["Python", "PyTorch", "YOLOv11", "SAM2", "Computer Vision", "Medical Imaging"],
+                longDescription: "This project integrates the YOLOv11 object detection model with the Segment Anything Model (SAM2) to achieve precise detection and segmentation of brain tumors from MRI scans. The system is designed to classify tumors into categories such as Glioma, Meningioma, and Pituitary. Pixel-wise segmentation masks are generated for accurate tumor outlining.",
+                githubLink: "https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam"
+            },
+            project2: {
+                title: "Custom Database Management System",
+                tags: ["Java", "DBMS", "Query Language", "Data Structures", "System Design"],
+                longDescription: "Developed a fully functional Database Management System from scratch using Java. This system allows users to create, manage, and query data stored in tables, which are internally represented as CSV or TSV files. It features a custom-designed, case-insensitive query language supporting a range of SQL-like operations including CREATE, INSERT, SELECT, UPDATE, and DELETE.",
+                githubLink: "https://github.com/DaniyalSE/Database-Management-System-Implementation"
+            }
+        };
+        const openModal = (modal) => {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.querySelector('.modal-content').classList.remove('scale-95');
+        };
+        const closeModal = (modal) => {
+            modal.classList.add('opacity-0');
+            modal.querySelector('.modal-content').classList.add('scale-95');
+            setTimeout(() => modal.classList.add('pointer-events-none'), 300);
+        };
+        document.getElementById('open-about-modal').addEventListener('click', () => openModal(document.getElementById('about-me-modal')));
+        document.querySelectorAll('.project-modal-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const projectModal = document.getElementById('project-details-modal');
+                const data = projectData[trigger.dataset.projectId];
+                projectModal.querySelector('#project-modal-title').textContent = data.title;
+                projectModal.querySelector('#project-modal-long-description').textContent = data.longDescription;
+                projectModal.querySelector('#project-modal-github-link').href = data.githubLink;
+                const tagsContainer = projectModal.querySelector('#project-modal-tags');
+                tagsContainer.innerHTML = '';
+                data.tags.forEach(tag => {
+                    const tagEl = document.createElement('span');
+                    tagEl.className = 'text-xs font-semibold bg-gray-700 text-gray-300 px-3 py-1 rounded-full';
+                    tagEl.textContent = tag;
+                    tagsContainer.appendChild(tagEl);
+                });
+                openModal(projectModal);
+            });
+        });
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => { if (e.target === modal || e.target.closest('.close-modal-btn')) closeModal(modal); });
+        });
+        
+        // --- SCROLL REVEAL ANIMATIONS ---
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // --- BACK TO TOP BUTTON ---
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('bottom-[-100px]');
+                backToTopButton.classList.add('bottom-4');
+            } else {
+                backToTopButton.classList.remove('bottom-4');
+                backToTopButton.classList.add('bottom-[-100px]');
+            }
+        });
+        backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        
+        // --- CONTACT FORM HANDLING ---
+        const form = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitText = document.getElementById('submit-text');
+        const submitSpinner = document.getElementById('submit-spinner');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            submitText.classList.add('hidden');
+            submitSpinner.classList.remove('hidden');
+            form.querySelector('button').disabled = true;
+            // Replace with your actual Formspree endpoint
+            const formspreeEndpoint = 'https://formspree.io/f/xgegqjqb'; 
+            try {
+                const response = await fetch(formspreeEndpoint, {
+                    method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    formStatus.textContent = "Thanks for your message! I'll get back to you soon.";
+                    formStatus.className = 'text-green-400 text-center text-sm pt-2';
+                    form.reset();
+                } else {
+                    const result = await response.json();
+                    formStatus.textContent = result.errors.map(error => error.message).join(', ');
+                    formStatus.className = 'text-red-400 text-center text-sm pt-2';
+                }
+            } catch (error) {
+                formStatus.textContent = "Oops! There was a problem sending your message.";
+                formStatus.className = 'text-red-400 text-center text-sm pt-2';
+            } finally {
+                submitText.classList.remove('hidden');
+                submitSpinner.classList.add('hidden');
+                form.querySelector('button').disabled = false;
+            }
+        });
+
+        // --- COMMAND PALETTE ---
+        const commandPalette = document.getElementById('command-palette');
+        const commandInput = document.getElementById('command-input');
+        const commandList = document.getElementById('command-list');
+        const resumeUrl = 'https://drive.google.com/file/d/1VM9R6AureqCIAF5p3Hmr04GWhYPrdzXz/view?usp=sharing';
+
+        const commands = [
+            { name: 'Go to Projects', icon: 'fa-folder', action: () => document.getElementById('projects-section').scrollIntoView({behavior: 'smooth'}) },
+            { name: 'Contact Me', icon: 'fa-envelope', action: () => document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'}) },
+            { name: 'Open LinkedIn', icon: 'fa-linkedin-in', action: () => window.open('https://www.linkedin.com/in/syeddaniyalnaqvi/', '_blank') },
+            { name: 'Open GitHub', icon: 'fa-github', action: () => window.open('https://github.com/DaniyalSE', '_blank') },
+            { name: 'View Resume', icon: 'fa-file-pdf', action: () => window.open(resumeUrl, '_blank') },
+            { name: 'Download Resume', icon: 'fa-download', action: () => {
+                const link = document.createElement('a');
+                link.href = resumeUrl.replace("view?usp=sharing", "uc?export=download");
+                link.setAttribute('download', 'Syed_Daniyal_Resume.pdf');
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }},
+            { name: 'Send me an email', icon: 'fa-paper-plane', action: () => window.location.href = 'mailto:naqvidaniya598@gmail.com' },
+            { name: 'Toggle Theme', icon: 'fa-palette', action: () => themeToggle.click() },
+            { name: 'Copy Email', icon: 'fa-copy', action: () => document.getElementById('copy-email-btn').click() },
+        ];
+
+        const renderCommands = (filter = '') => {
+            commandList.innerHTML = '';
+            const filteredCommands = commands.filter(cmd => cmd.name.toLowerCase().includes(filter.toLowerCase()));
+            filteredCommands.forEach((cmd, index) => {
+                const li = document.createElement('li');
+                li.className = `p-3 flex items-center gap-3 cursor-pointer rounded-lg hover:bg-white/10 ${index === 0 ? 'bg-white/10' : ''}`;
+                li.innerHTML = `<i class="fas ${cmd.icon} w-5 text-center text-gray-400"></i><span>${cmd.name}</span>`;
+                li.addEventListener('click', () => {
+                    cmd.action();
+                    closeModal(commandPalette);
+                });
+                commandList.appendChild(li);
+            });
+        };
+
+        const openCommandPalette = () => {
+            openModal(commandPalette);
+            commandInput.value = '';
+            commandInput.focus();
+            renderCommands();
+        };
+
+        document.getElementById('command-palette-mobile-trigger').addEventListener('click', openCommandPalette);
+        commandInput.addEventListener('input', () => renderCommands(commandInput.value));
+        commandInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const firstCommand = commandList.querySelector('li');
+                if (firstCommand) firstCommand.click();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                const isPaletteOpen = !commandPalette.classList.contains('opacity-0');
+                isPaletteOpen ? closeModal(commandPalette) : openCommandPalette();
+            }
+            if (e.key === 'Escape') {
+                const openModals = document.querySelectorAll('.modal:not(.opacity-0)');
+                if (openModals.length > 0) {
+                    closeModal(openModals[openModals.length - 1]);
+                }
+            }
+        });
+
+        // --- FOOTER YEAR ---
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
     </script>
 </body>
 </html>
