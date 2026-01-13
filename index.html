@@ -65,7 +65,6 @@
         /* Uniform glow effect */
         .uniform-glow {
             border-radius: 50%;
-            /* Using a warmer, brighter amber/yellow */
             box-shadow: 0 0 15px 5px rgba(252, 211, 77, 0.6);
             animation: pulse-glow 3s infinite alternate;
         }
@@ -78,7 +77,6 @@
                 box-shadow: 0 0 25px 10px rgba(252, 211, 77, 0.7);
             }
         }
-
 
         /* Custom spotlight effect */
         .spotlight {
@@ -147,7 +145,8 @@
 
         /* Skip link styles */
         .skip-link {
-            position: absolute; top: -100px; left: 10px;
+            position: absolute;
+            top: -100px; left: 10px;
             background-color: #fcd34d; color: #000;
             padding: 10px 15px; z-index: 9999;
             text-decoration: none; font-weight: bold;
@@ -291,7 +290,7 @@
                 </div>
                 <div class="group flex flex-col items-center gap-2" title="PyTorch">
                      <svg class="h-12 w-12 text-gray-400 group-hover:text-red-500 transition-colors duration-300 transform group-hover:scale-110" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>PyTorch</title><path fill="currentColor" d="M4.693 6.393a.832.832 0 0 1-.46-.133.833.833 0 0 1-.399-.721V5.76c0-.406.214-.78.56-.98l9.122-5.267c.346-.2.775-.2 1.12 0l9.122 5.267c.346.2.56.575.56.98v.002a.833.833 0 0 1-1.292.624L13.24 3.012l-8.547 3.381zm15.021 9.518a.833.833 0 0 1 .43.145l.006.003v.001c.346.2.56.575.56.98v.001a.833.833 0 0 1-.627 1.22l-8.48 2.545-4.562-2.634 8.48-4.912a.833.833 0 0 1 .823-.028zM4.62 8.567l4.56 2.633v10.178L4.62 16.44V8.567zm-.833.208v7.665a.833.833 0 0 1 .46.765v.001a.833.833 0 0 1-.398.721l-.006.003-3.71 2.142a.833.833 0 0 1-1.229-.724v-7.665a.833.833 0 0 1 .46-.765l3.71-2.142a.833.833 0 0 1 .713-.001zM9.74 13.51l-4.12-2.38 4.12-2.38 4.12 2.38-4.12 2.38zm-.56-3.222a.56.56 0 1 0 0-1.12.56.56 0 0 0 0 1.12zm4.402-2.541a.56.56 0 1 0 0-1.12.56.56 0 0 0 0 1.12zm0 5.083a.56.56 0 1 0 0-1.12.56.56 0 0 0 0 1.12z"/></svg>
-                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">PyTorch</span>
+                     <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">PyTorch</span>
                 </div>
                 <div class="group flex flex-col items-center gap-2" title="Java">
                     <i class="fab fa-java text-5xl text-gray-400 group-hover:text-orange-500 transition-colors duration-300 transform group-hover:scale-110"></i>
@@ -308,362 +307,260 @@
             </div>
         </section>
 
-
-        <section id="projects-section" class="reveal">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-8">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="interactive-card md:col-span-2 glass-card rounded-2xl p-6 flex flex-col group border border-amber-300/50 transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-amber-300/10 active:scale-[0.98]">
-                    <div class="flex items-center gap-3 mb-2">
-                         <h3 class="text-2xl font-bold text-amber-300">Brain Tumor Segmentation</h3>
-                         <span class="text-xs font-bold bg-amber-300/20 text-amber-200 px-3 py-1 rounded-full">Featured</span>
+        <section id="projects-section" class="mb-16 md:mb-24 reveal">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-12">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-48 bg-gradient-to-br from-blue-900/50 to-indigo-900/50 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-hospital text-6xl text-amber-300/30 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
-                    <p class="text-gray-400 dark:text-gray-300 mb-4">A high-impact project utilizing YOLOv11 and SAM2 for precise brain tumor detection and segmentation from MRI images. This system accurately classifies tumor types and generates pixel-wise masks, showcasing advanced application of computer vision in medical imaging.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs font-semibold bg-sky-400/20 text-sky-300 px-3 py-1 rounded-full">Python</span>
-                        <span class="text-xs font-semibold bg-red-400/20 text-red-300 px-3 py-1 rounded-full">PyTorch</span>
-                        <span class="text-xs font-semibold bg-green-400/20 text-green-300 px-3 py-1 rounded-full">YOLO</span>
-                        <span class="text-xs font-semibold bg-indigo-400/20 text-indigo-300 px-3 py-1 rounded-full">Computer Vision</span>
-                    </div>
-                    <div class="mt-auto flex items-center gap-4">
-                        <button class="project-modal-trigger font-semibold text-gray-300 hover:text-amber-300 transition-colors" data-project-id="project1">Learn More <i class="fas fa-info-circle ml-1"></i></button>
-                        <a href="https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-300 hover:text-amber-300 transition-colors">GitHub <i class="fas fa-external-link-alt ml-1"></i></a>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Hospital DBMS</h3>
+                        <p class="text-gray-400 mb-4 line-clamp-3">A comprehensive Database Management System designed to optimize hospital operations, managing patient records, doctor assignments, and billing processes with high data integrity.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">SQL</span>
+                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">MySQL</span>
+                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">Database Design</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/DaniyalSE/Hospital_DBMS" target="_blank" class="flex-grow bg-white text-black font-bold py-2 px-4 rounded-xl text-center hover:bg-amber-300 transition-colors">View Project</a>
+                        </div>
                     </div>
                 </div>
-                <div class="interactive-card glass-card rounded-2xl p-6 flex flex-col group hover:border-amber-300/50 transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98]">
-                    <h3 class="text-2xl font-bold text-amber-300 mb-2">Custom DBMS</h3>
-                    <p class="text-gray-400 dark:text-gray-300 mb-4 flex-grow">A Java DBMS managing data via tables (CSV/TSV files) with a custom query language for CRUD operations.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs font-semibold bg-orange-400/20 text-orange-300 px-3 py-1 rounded-full">Java</span>
-                        <span class="text-xs font-semibold bg-purple-400/20 text-purple-300 px-3 py-1 rounded-full">System Design</span>
+
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-48 bg-gradient-to-br from-green-900/50 to-emerald-900/50 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-link text-6xl text-amber-300/30 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
-                    <div class="mt-auto flex items-center gap-4">
-                        <button class="project-modal-trigger font-semibold text-gray-300 hover:text-amber-300 transition-colors" data-project-id="project2">Learn More <i class="fas fa-info-circle ml-1"></i></button>
-                        <a href="https://github.com/DaniyalSE/Database-Management-System-Implementation" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-300 hover:text-amber-300 transition-colors">GitHub <i class="fas fa-external-link-alt ml-1"></i></a>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">CipherLink</h3>
+                        <p class="text-gray-400 mb-4 line-clamp-3">A versatile security-focused toolset featuring modular architecture for easy extension. Focused on streamlining secure data workflows and link management.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">Security</span>
+                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">Modular Design</span>
+                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">Automation</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/DaniyalSE/CipherLink" target="_blank" class="flex-grow bg-white text-black font-bold py-2 px-4 rounded-xl text-center hover:bg-amber-300 transition-colors">View Project</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact-section" class="max-w-2xl mx-auto mt-16 md:mt-24 reveal">
+        <section id="contact-section" class="max-w-2xl mx-auto mb-16 md:mb-24 reveal">
             <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-8">Get In Touch</h2>
-            <form id="contact-form" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-                <p class="text-center text-gray-400">Have a question or want to work together? Leave your details and I'll get back to you.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                        <input type="text" name="name" id="name" required class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-300">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                        <input type="email" name="email" id="email" required class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-300">
-                    </div>
+            <div class="glass-card p-8 rounded-3xl border border-white/5 text-center">
+                <p class="text-gray-400 mb-8">Currently open to new opportunities, collaborations, or just a friendly chat about AI and ML!</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:naqvidaniya598@gmail.com" class="bg-amber-300 text-black font-bold py-4 px-8 rounded-2xl hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/syeddaniyalnaqvi/" target="_blank" class="bg-white/10 text-white font-bold py-4 px-8 rounded-2xl hover:bg-white/20 transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
                 </div>
-                <div>
-                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                    <textarea name="message" id="message" rows="4" required class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-amber-300"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-amber-300 text-black font-bold py-3 px-6 rounded-lg hover:bg-amber-200 transition-colors duration-300 transform hover:scale-105 active:scale-100 flex items-center justify-center gap-2">
-                    <span id="submit-text">Send Message</span>
-                    <i id="submit-spinner" class="fas fa-spinner fa-spin hidden"></i>
-                </button>
-                <div id="form-status" class="text-center text-sm pt-2"></div>
-            </form>
+            </div>
         </section>
 
-        <footer class="text-center mt-16 md:mt-24 text-gray-500">
-            <p>&copy; <span id="currentYear"></span> Syed Daniyal Haider Naqvi. All rights reserved.</p>
-            <p class="text-xs mt-2 hidden md:block">Press <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">Ctrl</kbd> + <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">K</kbd> to open command palette.</p>
+        <footer class="text-center py-8 border-t border-white/5">
+            <p class="text-gray-500 text-sm font-roboto-mono">
+                &copy; <span id="currentYear"></span> Syed Daniyal Haider Naqvi. Crafted with <span class="text-red-500">❤️</span>
+            </p>
         </footer>
     </main>
-    
-    <button id="back-to-top" class="fixed bottom-[-100px] right-4 z-50 w-12 h-12 rounded-full bg-amber-300/80 text-black backdrop-blur-sm flex items-center justify-center hover:scale-110 hover:bg-amber-300 active:scale-95 transition-all duration-300" aria-label="Go to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
-    <div id="about-me-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 opacity-0 pointer-events-none" aria-modal="true" role="dialog">
-        <div class="modal-content glass-card rounded-2xl p-6 sm:p-8 max-w-2xl w-full transform scale-95">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-3xl font-bold text-amber-300">About Me</h2>
-                <button class="close-modal-btn text-2xl text-gray-500 hover:text-white transition-colors">&times;</button>
+    <div id="about-modal" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+        <div class="modal-content relative bg-gray-900 border border-white/10 w-full max-w-2xl rounded-3xl overflow-hidden transform scale-95">
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-3xl font-bold text-white">About Me</h3>
+                    <button id="close-about-modal" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>I am a dedicated Computer Science student at COMSATS University Islamabad with a strong passion for Artificial Intelligence and Machine Learning.</p>
+                    <p>My journey in tech is driven by curiosity and a desire to build intelligent systems that solve real-world problems. I specialize in Python and am actively exploring Deep Learning frameworks.</p>
+                    <p>When I'm not coding, I'm usually reading up on the latest AI research or contributing to open-source projects on GitHub.</p>
+                </div>
             </div>
-            <p class="text-gray-300 mb-4">Hey! I'm Syed Daniyal Haider Naqvi, a Computer Science student at COMSATS Islamabad, currently grinding every day to become a better version of myself. Between university assignments and my personal coding projects, I'm constantly learning and pushing my limits.</p>
-            <p class="text-gray-300 mb-4">I'm deeply passionate about Artificial Intelligence and Machine Learning. Whether it's experimenting with new models or just reading about the latest breakthroughs, AI/ML always excites me. My goal is to not just be a good engineer, but someone who builds meaningful tech that solves real-world problems.</p>
-            <p class="text-gray-300">Still figuring things out, still learning — but always moving forward.</p>
-        </div>
-    </div>
-    <div id="project-details-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 opacity-0 pointer-events-none" aria-modal="true" role="dialog">
-        <div class="modal-content glass-card rounded-2xl p-6 sm:p-8 max-w-2xl w-full transform scale-95">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="project-modal-title" class="text-3xl font-bold text-amber-300">Project Title</h3>
-                <button class="close-modal-btn text-2xl text-gray-500 hover:text-white transition-colors">&times;</button>
-            </div>
-            <div id="project-modal-tags" class="flex flex-wrap gap-2 mb-4"></div>
-            <p id="project-modal-long-description" class="text-gray-300 mb-6"></p>
-            <a href="#" id="project-modal-github-link" class="font-semibold text-amber-300 hover:text-amber-200 transition-colors" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fas fa-external-link-alt ml-1"></i></a>
         </div>
     </div>
 
-    <div id="command-palette" class="modal fixed inset-0 z-50 flex items-start justify-center pt-12 md:pt-20 bg-black/80 p-4 opacity-0 pointer-events-none" aria-modal="true" role="dialog">
-        <div id="command-palette-content" class="modal-content glass-card rounded-2xl w-full max-w-xl transform scale-95 font-roboto-mono">
-            <div class="p-4 border-b border-white/10">
-                <input id="command-input" type="text" placeholder="Type a command or search..." class="w-full bg-transparent text-white placeholder-gray-500 focus:outline-none">
+    <div id="command-palette" class="modal fixed inset-0 z-[101] flex items-start justify-center p-4 pt-20 md:pt-32 opacity-0 pointer-events-none">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="modal-content relative bg-gray-900/90 border border-white/20 w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden transform -translate-y-4">
+            <div class="flex items-center p-4 border-b border-white/10">
+                <i class="fas fa-terminal text-amber-300 mr-3"></i>
+                <input type="text" id="command-input" placeholder="Type a command (e.g., 'resume', 'projects', 'github')..." class="bg-transparent border-none outline-none text-white w-full font-roboto-mono placeholder-gray-500">
+                <kbd class="hidden md:block px-2 py-1 bg-gray-800 text-gray-400 text-xs rounded border border-white/10 font-roboto-mono ml-2">ESC</kbd>
             </div>
-            <ul id="command-list" class="p-2 max-h-[60vh] overflow-y-auto">
+            <ul id="command-list" class="max-h-80 overflow-y-auto p-2">
                 </ul>
+            <div class="p-3 bg-black/20 border-t border-white/5 flex justify-between items-center">
+                <span class="text-[10px] text-gray-500 font-roboto-mono uppercase tracking-widest">Command Palette</span>
+                <div class="flex gap-4">
+                    <span class="text-[10px] text-gray-500 flex items-center gap-1"><kbd class="px-1 bg-gray-800 rounded">↑↓</kbd> Navigate</span>
+                    <span class="text-[10px] text-gray-500 flex items-center gap-1"><kbd class="px-1 bg-gray-800 rounded">↵</kbd> Select</span>
+                </div>
+            </div>
         </div>
     </div>
-
 
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-
-        // --- MOBILE OPTIMIZATION: Disable video background on small screens ---
-        const videoElement = document.getElementById('bg-video');
-        if (videoElement) {
-            const sourceElement = videoElement.querySelector('source');
-            const videoSrc = sourceElement ? sourceElement.src : '';
-
-            const handleVideoBackground = () => {
-                if (window.innerWidth < 768) { // Tailwind's 'md' breakpoint
-                    // Remove the source to prevent the video from loading and save data/battery
-                    if (videoElement.querySelector('source')) {
-                         videoElement.innerHTML = '';
-                    }
-                } else {
-                    // Add the source back on larger screens
-                    if (!videoElement.querySelector('source') && videoSrc) {
-                         videoElement.innerHTML = `<source src="${videoSrc}" type="video/mp4">`;
-                         videoElement.load();
-                    }
-                }
-            };
-            
-            window.addEventListener('resize', handleVideoBackground);
-            handleVideoBackground(); // Initial check on page load
-        }
-
-        // --- SPOTLIGHT CURSOR EFFECT (Desktop only) ---
+        // --- SPOTLIGHT EFFECT ---
         const spotlight = document.querySelector('.spotlight');
-        document.addEventListener('mousemove', e => {
-            // This effect doesn't work on touch, but gracefully degrades.
-            spotlight.style.setProperty('--x', e.clientX + 'px');
-            spotlight.style.setProperty('--y', e.clientY + 'px');
+        document.addEventListener('mousemove', (e) => {
+            spotlight.style.setProperty('--x', `${e.clientX}px`);
+            spotlight.style.setProperty('--y', `${e.clientY}px`);
         });
 
-        // --- THEME SWITCHER ---
+        // --- THEME TOGGLE ---
         const themeToggle = document.getElementById('theme-toggle');
         const sunIcon = themeToggle.querySelector('.fa-sun');
         const moonIcon = themeToggle.querySelector('.fa-moon');
-        const videoOverlay = document.querySelector('.video-overlay');
-
-        const applyTheme = (theme) => {
-            document.documentElement.classList.toggle('dark', theme === 'dark');
-            document.documentElement.classList.toggle('light', theme === 'light');
-            sunIcon.classList.toggle('hidden', theme === 'dark');
-            moonIcon.classList.toggle('hidden', theme === 'light');
-            localStorage.setItem('portfolioTheme', theme);
-            // Update mobile browser theme color
-            document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'dark' ? '#1a202c' : '#f0f2f5');
+        
+        const setTheme = (isLight) => {
+            if (isLight) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('light');
+                document.documentElement.classList.add('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
         };
+
+        const savedTheme = localStorage.getItem('theme');
+        setTheme(savedTheme === 'light');
 
         themeToggle.addEventListener('click', () => {
-            const currentTheme = localStorage.getItem('portfolioTheme') || 'dark';
-            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            const isLight = document.documentElement.classList.contains('light');
+            setTheme(!isLight);
         });
-        applyTheme(localStorage.getItem('portfolioTheme') || 'dark');
 
         // --- TYPEWRITER EFFECT ---
-        const skillsTextElement = document.getElementById('skills-text');
-        const skills = ["AI/ML", "Deep Learning", "Python", "Computer Vision"];
-        let skillIndex = 0, charIndex = 0, isDeleting = false;
-        function typeWriter() {
-            if (!skillsTextElement) return;
+        const skills = ["Machine Learning Specialist", "Deep Learning Enthusiast", "Python Developer", "Data Scientist", "Computer Vision Researcher"];
+        let skillIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const skillsText = document.getElementById('skills-text');
+
+        const type = () => {
             const currentSkill = skills[skillIndex];
-            let speed = isDeleting ? 70 : 120;
-            skillsTextElement.textContent = currentSkill.substring(0, isDeleting ? --charIndex : ++charIndex);
-            if (!isDeleting && charIndex === currentSkill.length + 1) {
-                isDeleting = true; speed = 2000;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false; skillIndex = (skillIndex + 1) % skills.length; speed = 500;
-            }
-            setTimeout(typeWriter, speed);
-        }
-        setTimeout(typeWriter, 800);
-
-        // --- EMAIL COPY FUNCTIONALITY ---
-        document.getElementById('copy-email-btn').addEventListener('click', () => {
-            const email = document.getElementById('email-address').textContent;
-            navigator.clipboard.writeText(email).then(() => {
-                const feedback = document.getElementById('copy-feedback');
-                feedback.style.opacity = '1';
-                setTimeout(() => { feedback.style.opacity = '0'; }, 2000);
-            });
-        });
-
-        // --- INTERACTIVE CARD TILT EFFECT (Desktop only) ---
-        document.querySelectorAll('.interactive-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const { left, top, width, height } = card.getBoundingClientRect();
-                const x = e.clientX - left;
-                const y = e.clientY - top;
-                const rotateX = (y - height / 2) / (height/2) * -8;
-                const rotateY = (x - width / 2) / (width/2) * 8;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-                card.style.boxShadow = '0 40px 50px -20px rgba(0,0,0,0.4)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-                card.style.boxShadow = 'none';
-            });
-        });
-        
-        // --- MODAL HANDLING ---
-        const projectData = {
-            project1: {
-                title: "Brain Tumor Segmentation (YOLOv11 & SAM2)",
-                tags: ["Python", "PyTorch", "YOLOv11", "SAM2", "Computer Vision", "Medical Imaging"],
-                longDescription: "This project integrates the YOLOv11 object detection model with the Segment Anything Model (SAM2) to achieve precise detection and segmentation of brain tumors from MRI scans. The system is designed to classify tumors into categories such as Glioma, Meningioma, and Pituitary. Pixel-wise segmentation masks are generated for accurate tumor outlining.",
-                githubLink: "https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam"
-            },
-            project2: {
-                title: "Custom Database Management System",
-                tags: ["Java", "DBMS", "Query Language", "Data Structures", "System Design"],
-                longDescription: "Developed a fully functional Database Management System from scratch using Java. This system allows users to create, manage, and query data stored in tables, which are internally represented as CSV or TSV files. It features a custom-designed, case-insensitive query language supporting a range of SQL-like operations including CREATE, INSERT, SELECT, UPDATE, and DELETE.",
-                githubLink: "https://github.com/DaniyalSE/Database-Management-System-Implementation"
-            }
-        };
-        const openModal = (modal) => {
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.querySelector('.modal-content').classList.remove('scale-95');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        };
-        const closeModal = (modal) => {
-            modal.classList.add('opacity-0');
-            modal.querySelector('.modal-content').classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('pointer-events-none');
-                document.body.style.overflow = ''; // Restore scrolling
-            }, 300);
-        };
-        document.getElementById('open-about-modal').addEventListener('click', () => openModal(document.getElementById('about-me-modal')));
-        document.querySelectorAll('.project-modal-trigger').forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                const projectModal = document.getElementById('project-details-modal');
-                const data = projectData[trigger.dataset.projectId];
-                projectModal.querySelector('#project-modal-title').textContent = data.title;
-                projectModal.querySelector('#project-modal-long-description').textContent = data.longDescription;
-                projectModal.querySelector('#project-modal-github-link').href = data.githubLink;
-                const tagsContainer = projectModal.querySelector('#project-modal-tags');
-                tagsContainer.innerHTML = '';
-                data.tags.forEach(tag => {
-                    const tagEl = document.createElement('span');
-                    tagEl.className = 'text-xs font-semibold bg-gray-700 text-gray-300 px-3 py-1 rounded-full';
-                    tagEl.textContent = tag;
-                    tagsContainer.appendChild(tagEl);
-                });
-                openModal(projectModal);
-            });
-        });
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', (e) => { if (e.target === modal || e.target.closest('.close-modal-btn')) closeModal(modal); });
-        });
-        
-        // --- SCROLL REVEAL ANIMATIONS ---
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // --- BACK TO TOP BUTTON ---
-        const backToTopButton = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.remove('bottom-[-100px]');
-                backToTopButton.classList.add('bottom-4');
+            if (isDeleting) {
+                skillsText.textContent = currentSkill.substring(0, charIndex - 1);
+                charIndex--;
             } else {
-                backToTopButton.classList.remove('bottom-4');
-                backToTopButton.classList.add('bottom-[-100px]');
+                skillsText.textContent = currentSkill.substring(0, charIndex + 1);
+                charIndex++;
             }
-        });
-        backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        
-        // --- CONTACT FORM HANDLING ---
-        const form = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
-        const submitText = document.getElementById('submit-text');
-        const submitSpinner = document.getElementById('submit-spinner');
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const data = new FormData(form);
-            submitText.classList.add('hidden');
-            submitSpinner.classList.remove('hidden');
-            form.querySelector('button').disabled = true;
-            // This is your personal Formspree endpoint.
-            const formspreeEndpoint = 'https://formspree.io/f/xwpnkwqj'; 
-            try {
-                const response = await fetch(formspreeEndpoint, {
-                    method: 'POST', body: data, headers: { 'Accept': 'application/json' }
-                });
-                if (response.ok) {
-                    formStatus.textContent = "Thanks for your message! I'll get back to you soon.";
-                    formStatus.className = 'text-green-400 text-center text-sm pt-2';
-                    form.reset();
-                } else {
-                    const result = await response.json();
-                    formStatus.textContent = result.errors.map(error => error.message).join(', ');
-                    formStatus.className = 'text-red-400 text-center text-sm pt-2';
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentSkill.length) {
+                isDeleting = true;
+                typeSpeed = 2000;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                skillIndex = (skillIndex + 1) % skills.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        };
+        type();
+
+        // --- SCROLL REVEAL ---
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.85) {
+                    el.classList.add('visible');
                 }
-            } catch (error) {
-                formStatus.textContent = "Oops! There was a problem sending your message.";
-                formStatus.className = 'text-red-400 text-center text-sm pt-2';
-            } finally {
-                submitText.classList.remove('hidden');
-                submitSpinner.classList.add('hidden');
-                form.querySelector('button').disabled = false;
-            }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // --- EMAIL COPY ---
+        const copyEmailBtn = document.getElementById('copy-email-btn');
+        const emailAddress = document.getElementById('email-address').textContent;
+        const copyFeedback = document.getElementById('copy-feedback');
+
+        copyEmailBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(emailAddress).then(() => {
+                copyFeedback.style.opacity = '1';
+                setTimeout(() => {
+                    copyFeedback.style.opacity = '0';
+                }, 2000);
+            });
+        });
+
+        // --- MODAL LOGIC ---
+        const openModal = (modal) => {
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modal.querySelector('.modal-content').classList.remove('scale-95', '-translate-y-4');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeModal = (modal) => {
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            modal.querySelector('.modal-content').classList.add('scale-95', '-translate-y-4');
+            document.body.style.overflow = 'auto';
+        };
+
+        document.getElementById('open-about-modal').addEventListener('click', () => openModal(document.getElementById('about-modal')));
+        document.getElementById('close-about-modal').addEventListener('click', () => closeModal(document.getElementById('about-modal')));
+
+        // Close modals on clicking backdrop
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal || e.target.classList.contains('absolute')) {
+                    closeModal(modal);
+                }
+            });
         });
 
         // --- COMMAND PALETTE ---
         const commandPalette = document.getElementById('command-palette');
         const commandInput = document.getElementById('command-input');
         const commandList = document.getElementById('command-list');
-        const resumeUrl = 'https://drive.google.com/file/d/1VM9R6AureqCIAF5p3Hmr04GWhYPrdzXz/view?usp=sharing';
 
         const commands = [
-            { name: 'Go to Projects', icon: 'fa-folder', action: () => document.getElementById('projects-section').scrollIntoView({behavior: 'smooth'}) },
-            { name: 'Contact Me', icon: 'fa-envelope', action: () => document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'}) },
-            { name: 'Open LinkedIn', icon: 'fa-linkedin-in', action: () => window.open('https://www.linkedin.com/in/syeddaniyalnaqvi/', '_blank') },
-            { name: 'Open GitHub', icon: 'fa-github', action: () => window.open('https://github.com/DaniyalSE', '_blank') },
-            { name: 'View Resume', icon: 'fa-file-pdf', action: () => window.open(resumeUrl, '_blank') },
-            { name: 'Download Resume', icon: 'fa-download', action: () => {
-                const link = document.createElement('a');
-                link.href = resumeUrl.replace("view?usp=sharing", "uc?export=download");
-                link.setAttribute('download', 'Syed_Daniyal_Resume.pdf');
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }},
-            { name: 'Send me an email', icon: 'fa-paper-plane', action: () => window.location.href = 'mailto:naqvidaniya598@gmail.com' },
-            { name: 'Toggle Theme', icon: 'fa-palette', action: () => themeToggle.click() },
-            { name: 'Copy Email', icon: 'fa-copy', action: () => document.getElementById('copy-email-btn').click() },
+            { name: 'View Resume', icon: 'fa-file-pdf', action: () => window.open('https://drive.google.com/file/d/1VM9R6AureqCIAF5p3Hmr04GWhYPrdzXz/view?usp=sharing', '_blank') },
+            { name: 'GitHub Profile', icon: 'fa-github', action: () => window.open('https://github.com/DaniyalSE', '_blank') },
+            { name: 'LinkedIn Profile', icon: 'fa-linkedin', action: () => window.open('https://www.linkedin.com/in/syeddaniyalnaqvi/', '_blank') },
+            { name: 'About Me', icon: 'fa-user-circle', action: () => openModal(document.getElementById('about-modal')) },
+            { name: 'Contact Me', icon: 'fa-envelope', action: () => document.getElementById('contact-section').scrollIntoView() },
+            { name: 'View Projects', icon: 'fa-code', action: () => document.getElementById('projects-section').scrollIntoView() },
+            { name: 'Toggle Theme', icon: 'fa-adjust', action: () => themeToggle.click() }
         ];
 
         const renderCommands = (filter = '') => {
             commandList.innerHTML = '';
-            const filteredCommands = commands.filter(cmd => cmd.name.toLowerCase().includes(filter.toLowerCase()));
-            filteredCommands.forEach((cmd, index) => {
+            const filtered = commands.filter(c => c.name.toLowerCase().includes(filter.toLowerCase()));
+            filtered.forEach(cmd => {
                 const li = document.createElement('li');
-                li.className = `p-3 flex items-center gap-3 cursor-pointer rounded-lg hover:bg-white/10 ${index === 0 ? 'bg-white/10' : ''}`;
-                li.innerHTML = `<i class="fas ${cmd.icon} w-5 text-center text-gray-400"></i><span>${cmd.name}</span>`;
-                li.addEventListener('click', () => {
+                li.className = 'flex items-center p-3 rounded-xl hover:bg-white/10 cursor-pointer text-gray-300 transition-colors group';
+                li.innerHTML = `
+                    <i class="fas ${cmd.icon} w-8 text-center group-hover:text-amber-300 transition-colors"></i>
+                    <span class="font-roboto-mono text-sm">${cmd.name}</span>
+                `;
+                li.onclick = () => {
                     cmd.action();
                     closeModal(commandPalette);
-                });
+                };
                 commandList.appendChild(li);
             });
         };
