@@ -5,599 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Syed Daniyal Haider Naqvi - AI/ML Enthusiast and Developer. Explore my portfolio, projects in Machine Learning, Deep Learning, Python, and Computer Vision.">
     <meta name="theme-color" content="#1a202c">
-    <title>Syed Daniyal Haider Naqvi | AI/ML Enthusiast</title>
+    <title>Syed Daniyal Haider Naqvi | Portfolio</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* Custom Styles & Tailwind Configuration */
-        body {
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+        .font-roboto-mono { font-family: 'Roboto Mono', monospace; }
+
+        #bg-video { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -2; transform: translateX(-50%) translateY(-50%); background-size: cover; transition: 1s opacity; }
+        .video-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: -1; }
+        html.light .video-overlay { background-color: rgba(240, 242, 245, 0.85); }
+
+        .uniform-glow { border-radius: 50%; box-shadow: 0 0 15px 5px rgba(252, 211, 77, 0.6); animation: pulse-glow 3s infinite alternate; }
+        @keyframes pulse-glow { from { box-shadow: 0 0 15px 5px rgba(252, 211, 77, 0.5); } to { box-shadow: 0 0 25px 10px rgba(252, 211, 77, 0.7); } }
+
+        .spotlight { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 999; background: radial-gradient(circle at var(--x) var(--y), rgba(252, 211, 77, 0.15), transparent 40%); transition: background 0.2s ease-out; }
         
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-        }
+        .glass-card { background: rgba(25, 25, 25, 0.6); backdrop-filter: blur(10px) saturate(150%); border: 1px solid rgba(255, 255, 255, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        html.light .glass-card { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(0, 0, 0, 0.1); }
 
-        .font-roboto-mono {
-            font-family: 'Roboto Mono', monospace;
-        }
+        .typewriter-cursor { display: inline-block; background-color: #fcd34d; width: 9px; animation: blinkCursor 0.9s step-end infinite; vertical-align: bottom; margin-left: 2px; }
+        @keyframes blinkCursor { from, to { background-color: transparent; } 50% { background-color: #fcd34d; } }
 
-        /* Video background */
-        #bg-video {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -2;
-            transform: translateX(-50%) translateY(-50%);
-            background-size: cover;
-            transition: 1s opacity;
-        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        .video-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: -1;
-        }
-        
-        html.light .video-overlay {
-            background-color: rgba(240, 242, 245, 0.7);
-        }
-
-        /* Uniform glow effect */
-        .uniform-glow {
-            border-radius: 50%;
-            box-shadow: 0 0 15px 5px rgba(252, 211, 77, 0.6);
-            animation: pulse-glow 3s infinite alternate;
-        }
-
-        @keyframes pulse-glow {
-            from {
-                box-shadow: 0 0 15px 5px rgba(252, 211, 77, 0.5);
-            }
-            to {
-                box-shadow: 0 0 25px 10px rgba(252, 211, 77, 0.7);
-            }
-        }
-
-        /* Custom spotlight effect */
-        .spotlight {
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 999;
-            background: radial-gradient(circle at var(--x) var(--y), rgba(252, 211, 77, 0.15), transparent 40%);
-            transition: background 0.2s ease-out;
-        }
-        
-        html.light .spotlight {
-             background: radial-gradient(circle at var(--x) var(--y), rgba(252, 211, 77, 0.1), transparent 40%);
-        }
-
-        /* Glassmorphism effect for cards */
-        .glass-card {
-            background: rgba(25, 25, 25, 0.6);
-            backdrop-filter: blur(10px) saturate(150%);
-            -webkit-backdrop-filter: blur(10px) saturate(150%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        html.light .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        /* Typewriter cursor blink animation */
-        .typewriter-cursor {
-            display: inline-block;
-            background-color: #fcd34d; /* amber-300 */
-            width: 9px;
-            animation: blinkCursor 0.9s step-end infinite;
-            vertical-align: bottom;
-            margin-left: 2px;
-        }
-        @keyframes blinkCursor {
-            from, to { background-color: transparent; }
-            50% { background-color: #fcd34d; }
-        }
-
-        /* Live status indicator animation */
-        .live-indicator { animation: pulse 2s infinite; }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-        }
-
-        /* Scroll reveal animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Modal transition styles */
-        .modal { transition: opacity 0.3s ease-in-out; }
-        .modal-content { transition: transform 0.3s ease-in-out; }
-
-        /* Skip link styles */
-        .skip-link {
-            position: absolute;
-            top: -100px; left: 10px;
-            background-color: #fcd34d; color: #000;
-            padding: 10px 15px; z-index: 9999;
-            text-decoration: none; font-weight: bold;
-            border-radius: 0 0 5px 5px; transition: top 0.3s ease;
-        }
-        .skip-link:focus { top: 0; }
-        
-        /* Career Timeline styles */
-        .timeline-item {
-            position: relative;
-            padding-left: 30px;
-            border-left: 2px solid #4a5568;
-            transition: border-color 0.3s ease;
-        }
-        .timeline-item:hover {
-            border-left-color: #fcd34d;
-        }
-        .timeline-item:last-child {
-            border-left: 2px solid transparent;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -9px;
-            top: 4px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: #4a5568;
-            border: 3px solid #1a202c;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .timeline-item:hover .timeline-dot {
-            transform: scale(1.2);
-        }
-        html.light .timeline-dot {
-             border: 3px solid #f0f2f5;
-        }
-        .timeline-item.active .timeline-dot {
-            background-color: #fcd34d;
-        }
+        .skill-bar-bg { background: rgba(255, 255, 255, 0.1); border-radius: 10px; height: 8px; width: 100%; overflow: hidden; }
+        .skill-bar-fill { background: #fcd34d; height: 100%; width: 0; transition: width 1.5s ease-in-out; }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-500">
+<body class="bg-gray-950 text-gray-100 transition-colors duration-500">
     <div class="video-overlay"></div>
     <video autoplay muted loop playsinline id="bg-video">
       <source src="Ani.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
     <div class="spotlight"></div>
 
-    <a href="#main-content" class="skip-link">Skip to Main Content</a>
-
     <div class="fixed top-4 right-4 z-50 flex items-center gap-2">
-        <button id="command-palette-mobile-trigger" aria-label="Open command palette" class="md:hidden w-12 h-12 rounded-full bg-gray-800/50 dark:bg-gray-200/10 text-amber-300 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:scale-110 active:scale-95 transition-transform">
+        <button id="command-palette-mobile-trigger" class="md:hidden w-12 h-12 rounded-full bg-gray-800/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-amber-300">
             <i class="fas fa-terminal"></i>
         </button>
-        <button id="theme-toggle" aria-label="Toggle theme" class="w-12 h-12 rounded-full bg-gray-800/50 dark:bg-gray-200/10 text-amber-300 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:scale-110 active:scale-95 transition-transform">
+        <button id="theme-toggle" class="w-12 h-12 rounded-full bg-gray-800/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-amber-300">
             <i class="fas fa-sun hidden"></i>
             <i class="fas fa-moon"></i>
         </button>
     </div>
 
-    <main id="main-content" class="relative z-10 container mx-auto px-4 sm:px-6 py-8 md:py-16">
-        
-        <section class="text-center mb-16 md:mb-24 reveal">
+    <main id="main-content" class="relative z-10 container mx-auto px-4 py-16">
+        <section class="text-center mb-24 reveal">
             <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 uniform-glow">
-                <img src="PP.jpg" alt="Syed Daniyal Haider Naqvi" class="w-full h-full rounded-full object-cover">
+                <img src="PP.jpg" alt="Profile" class="w-full h-full rounded-full object-cover">
             </div>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">Syed Daniyal Haider Naqvi</h1>
-            <div class="flex justify-center items-center gap-4 mb-4">
-                <p class="text-xl md:text-2xl text-amber-300">AI/ML Enthusiast | Developer</p>
-                <div class="group relative flex items-center">
-                    <div class="w-3 h-3 bg-green-500 rounded-full live-indicator"></div>
-                    <span class="absolute bottom-full mb-2 w-max px-2 py-1 text-xs bg-gray-800 text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Available for opportunities</span>
-                </div>
-            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-2">Syed Daniyal Haider Naqvi</h1>
+            <p class="text-2xl text-amber-300 mb-4">AI/ML Enthusiast | Developer</p>
             <div class="font-roboto-mono text-gray-400 flex items-center justify-center gap-2 mb-6">
                 <span id="email-address">naqvidaniya598@gmail.com</span>
-                <button id="copy-email-btn" class="text-gray-500 hover:text-amber-300 transition-colors" aria-label="Copy email address">
-                    <i class="fas fa-copy"></i>
-                </button>
+                <button id="copy-email-btn" class="hover:text-amber-300"><i class="fas fa-copy"></i></button>
                 <span id="copy-feedback" class="text-green-400 text-sm opacity-0 transition-opacity">Copied!</span>
             </div>
-            <div class="text-lg md:text-xl text-amber-200 h-8 font-roboto-mono">
+            <div class="text-xl text-amber-200 h-8 font-roboto-mono">
                 <span id="skills-text"></span><span class="typewriter-cursor h-7"></span>
             </div>
         </section>
 
-        <section class="max-w-md mx-auto grid grid-cols-1 gap-6 mb-16 md:mb-24 reveal">
-            <a href="https://www.linkedin.com/in/syeddaniyalnaqvi/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-200/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98]">
-                <i class="fab fa-linkedin-in w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
-                <span class="flex-grow font-semibold">LinkedIn Profile</span>
-                <i class="fas fa-arrow-right opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 transition-all duration-300"></i>
+        <section class="max-w-md mx-auto grid gap-4 mb-24 reveal">
+            <a href="https://github.com/DaniyalSE" target="_blank" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-amber-300 hover:text-black">
+                <i class="fab fa-github text-2xl"></i> <span class="font-semibold">GitHub Profile</span>
             </a>
-            <a href="https://github.com/DaniyalSE" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-200/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98]">
-                <i class="fab fa-github w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
-                <span class="flex-grow font-semibold">GitHub Profile</span>
-                <i class="fas fa-arrow-right opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 transition-all duration-300"></i>
+            <a href="https://www.linkedin.com/in/syeddaniyalnaqvi/" target="_blank" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-amber-300 hover:text-black">
+                <i class="fab fa-linkedin text-2xl"></i> <span class="font-semibold">LinkedIn Profile</span>
             </a>
-            <a href="https://drive.google.com/file/d/1VM9R6AureqCIAF5p3Hmr04GWhYPrdzXz/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-200/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98]">
-                <i class="fas fa-file-pdf w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
-                <span class="flex-grow font-semibold">View Resume</span>
-                <span class="text-xs font-bold bg-amber-300/20 text-amber-200 group-hover:bg-black/80 group-hover:text-amber-200 px-3 py-1 rounded-full">PDF</span>
-            </a>
-            <button id="open-about-modal" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-200/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98] text-left">
-                <i class="fas fa-user-circle w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
-                <span class="flex-grow font-semibold">About Me</span>
-                <i class="fas fa-arrow-right opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 transition-all duration-300"></i>
+            <button id="open-about-modal" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-amber-300 hover:text-black text-left">
+                <i class="fas fa-user-circle text-2xl"></i> <span class="font-semibold">About Me</span>
             </button>
-             <a href="#contact-section" class="interactive-card glass-card group flex items-center p-5 rounded-2xl hover:bg-amber-200/80 hover:text-black transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98]">
-                <i class="fas fa-envelope w-8 text-2xl text-gray-300 group-hover:text-black transition-colors"></i>
-                <span class="flex-grow font-semibold">Contact Me</span>
-                <i class="fas fa-arrow-down opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 transition-all duration-300"></i>
-            </a>
         </section>
 
-        <section class="max-w-2xl mx-auto mb-16 md:mb-24 reveal">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-12">Career Timeline</h2>
-            <div class="space-y-12">
-                <div class="timeline-item active">
-                    <div class="timeline-dot"></div>
-                    <p class="font-roboto-mono text-sm text-amber-300 mb-1">2024 - Present</p>
-                    <h3 class="text-xl font-bold text-white">BS in Computer Science</h3>
-                    <p class="text-gray-400">COMSATS University Islamabad</p>
+        <section class="max-w-3xl mx-auto mb-24 reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1"><span class="font-semibold">Python</span><span>90%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1"><span class="font-semibold">PyTorch</span><span>85%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <p class="font-roboto-mono text-sm text-gray-500 mb-1">Future</p>
-                    <h3 class="text-xl font-bold text-white">AI/ML Engineer</h3>
-                    <p class="text-gray-400">Seeking opportunities to build impactful AI solutions.</p>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1"><span class="font-semibold">Java</span><span>75%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1"><span class="font-semibold">Docker</span><span>70%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="text-center mb-16 md:mb-24 reveal">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8">Technologies I Use</h2>
-            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-2xl mx-auto">
-                <div class="group flex flex-col items-center gap-2" title="Python">
-                    <i class="fab fa-python text-5xl text-gray-400 group-hover:text-sky-400 transition-colors duration-300 transform group-hover:scale-110"></i>
-                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Python</span>
-                </div>
-                <div class="group flex flex-col items-center gap-2" title="PyTorch">
-                     <svg class="h-12 w-12 text-gray-400 group-hover:text-red-500 transition-colors duration-300 transform group-hover:scale-110" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>PyTorch</title><path fill="currentColor" d="M4.693 6.393a.832.832 0 0 1-.46-.133.833.833 0 0 1-.399-.721V5.76c0-.406.214-.78.56-.98l9.122-5.267c.346-.2.775-.2 1.12 0l9.122 5.267c.346.2.56.575.56.98v.002a.833.833 0 0 1-1.292.624L13.24 3.012l-8.547 3.381zm15.021 9.518a.833.833 0 0 1 .43.145l.006.003v.001c.346.2.56.575.56.98v.001a.833.833 0 0 1-.627 1.22l-8.48 2.545-4.562-2.634 8.48-4.912a.833.833 0 0 1 .823-.028zM4.62 8.567l4.56 2.633v10.178L4.62 16.44V8.567zm-.833.208v7.665a.833.833 0 0 1 .46.765v.001a.833.833 0 0 1-.398.721l-.006.003-3.71 2.142a.833.833 0 0 1-1.229-.724v-7.665a.833.833 0 0 1 .46-.765l3.71-2.142a.833.833 0 0 1 .713-.001zM9.74 13.51l-4.12-2.38 4.12-2.38 4.12 2.38-4.12 2.38zm-.56-3.222a.56.56 0 1 0 0-1.12.56.56 0 0 0 0 1.12zm4.402-2.541a.56.56 0 1 0 0-1.12.56.56 0 0 0 0 1.12zm0 5.083a.56.56 0 1 0 0-1.12.56.56 0 0 0 0 1.12z"/></svg>
-                     <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">PyTorch</span>
-                </div>
-                <div class="group flex flex-col items-center gap-2" title="Java">
-                    <i class="fab fa-java text-5xl text-gray-400 group-hover:text-orange-500 transition-colors duration-300 transform group-hover:scale-110"></i>
-                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Java</span>
-                </div>
-                <div class="group flex flex-col items-center gap-2" title="Git & GitHub">
-                    <i class="fab fa-github text-5xl text-gray-400 group-hover:text-white transition-colors duration-300 transform group-hover:scale-110"></i>
-                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">GitHub</span>
-                </div>
-                <div class="group flex flex-col items-center gap-2" title="Docker">
-                    <i class="fab fa-docker text-5xl text-gray-400 group-hover:text-blue-500 transition-colors duration-300 transform group-hover:scale-110"></i>
-                    <span class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Docker</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects-section" class="mb-16 md:mb-24 reveal">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-12">Featured Projects</h2>
+        <section id="projects-section" class="mb-24 reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="h-48 bg-gradient-to-br from-blue-900/50 to-indigo-900/50 flex items-center justify-center relative overflow-hidden">
-                        <i class="fas fa-hospital text-6xl text-amber-300/30 group-hover:scale-110 transition-transform duration-500"></i>
+                <div class="glass-card rounded-2xl p-6 group">
+                    <h3 class="text-2xl font-bold text-amber-300 mb-2">Brain Tumor Segmentation</h3>
+                    <p class="text-gray-400 mb-4">Advanced medical imaging using YOLOv11 and SAM2 for pixel-wise MRI analysis.</p>
+                    <div class="flex gap-2 mb-6">
+                        <span class="bg-amber-300/10 text-amber-300 px-3 py-1 rounded-full text-xs">AI/ML</span>
+                        <span class="bg-amber-300/10 text-amber-300 px-3 py-1 rounded-full text-xs">Computer Vision</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Hospital DBMS</h3>
-                        <p class="text-gray-400 mb-4 line-clamp-3">A comprehensive Database Management System designed to optimize hospital operations, managing patient records, doctor assignments, and billing processes with high data integrity.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">SQL</span>
-                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">MySQL</span>
-                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">Database Design</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="https://github.com/DaniyalSE/Hospital_DBMS" target="_blank" class="flex-grow bg-white text-black font-bold py-2 px-4 rounded-xl text-center hover:bg-amber-300 transition-colors">View Project</a>
-                        </div>
-                    </div>
+                    <a href="https://github.com/DaniyalSE/brain-tumor-segmentation-yolo-sam" target="_blank" class="inline-block bg-white text-black px-6 py-2 rounded-lg font-bold hover:bg-amber-300 transition-colors">View Code</a>
                 </div>
-
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="h-48 bg-gradient-to-br from-green-900/50 to-emerald-900/50 flex items-center justify-center relative overflow-hidden">
-                        <i class="fas fa-link text-6xl text-amber-300/30 group-hover:scale-110 transition-transform duration-500"></i>
+                <div class="glass-card rounded-2xl p-6 group">
+                    <h3 class="text-2xl font-bold text-amber-300 mb-2">Custom Java DBMS</h3>
+                    <p class="text-gray-400 mb-4">A custom-built database engine managing data via CSV/TSV with a unique query language.</p>
+                    <div class="flex gap-2 mb-6">
+                        <span class="bg-amber-300/10 text-amber-300 px-3 py-1 rounded-full text-xs">Java</span>
+                        <span class="bg-amber-300/10 text-amber-300 px-3 py-1 rounded-full text-xs">System Design</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">CipherLink</h3>
-                        <p class="text-gray-400 mb-4 line-clamp-3">A versatile security-focused toolset featuring modular architecture for easy extension. Focused on streamlining secure data workflows and link management.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">Security</span>
-                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">Modular Design</span>
-                            <span class="px-3 py-1 bg-amber-300/10 text-amber-300 text-xs font-bold rounded-full border border-amber-300/20">Automation</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="https://github.com/DaniyalSE/CipherLink" target="_blank" class="flex-grow bg-white text-black font-bold py-2 px-4 rounded-xl text-center hover:bg-amber-300 transition-colors">View Project</a>
-                        </div>
-                    </div>
+                    <a href="https://github.com/DaniyalSE/Database-Management-System-Implementation" target="_blank" class="inline-block bg-white text-black px-6 py-2 rounded-lg font-bold hover:bg-amber-300 transition-colors">View Code</a>
                 </div>
             </div>
         </section>
 
-        <section id="contact-section" class="max-w-2xl mx-auto mb-16 md:mb-24 reveal">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-8">Get In Touch</h2>
-            <div class="glass-card p-8 rounded-3xl border border-white/5 text-center">
-                <p class="text-gray-400 mb-8">Currently open to new opportunities, collaborations, or just a friendly chat about AI and ML!</p>
+        <section id="contact-section" class="max-w-2xl mx-auto reveal">
+            <h2 class="text-4xl font-bold text-center mb-8">Get In Touch</h2>
+            <div class="glass-card p-8 rounded-3xl text-center">
+                <p class="text-gray-400 mb-8">Open for collaborations and opportunities in the AI/ML space.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="mailto:naqvidaniya598@gmail.com" class="bg-amber-300 text-black font-bold py-4 px-8 rounded-2xl hover:scale-105 transition-transform flex items-center justify-center gap-2">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/syeddaniyalnaqvi/" target="_blank" class="bg-white/10 text-white font-bold py-4 px-8 rounded-2xl hover:bg-white/20 transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
-                        <i class="fab fa-linkedin"></i>
-                        LinkedIn
-                    </a>
+                    <a href="mailto:naqvidaniya598@gmail.com" class="bg-amber-300 text-black font-bold py-3 px-8 rounded-xl hover:scale-105 transition-transform">Send Email</a>
+                    <a href="https://www.linkedin.com/in/syeddaniyalnaqvi/" target="_blank" class="bg-white/10 text-white font-bold py-3 px-8 rounded-xl hover:bg-white/20">LinkedIn</a>
                 </div>
             </div>
         </section>
 
-        <footer class="text-center py-8 border-t border-white/5">
-            <p class="text-gray-500 text-sm font-roboto-mono">
-                &copy; <span id="currentYear"></span> Syed Daniyal Haider Naqvi. Crafted with <span class="text-red-500">❤️</span>
-            </p>
+        <footer class="text-center mt-24 py-8 border-t border-white/5">
+            <p class="text-gray-500">&copy; <span id="currentYear"></span> Syed Daniyal Haider Naqvi. [cite: 82, 156]</p>
         </footer>
     </main>
 
-    <div id="about-modal" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none">
+    <div id="about-modal" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
-        <div class="modal-content relative bg-gray-900 border border-white/10 w-full max-w-2xl rounded-3xl overflow-hidden transform scale-95">
-            <div class="p-6 md:p-8">
-                <div class="flex justify-between items-start mb-6">
-                    <h3 class="text-3xl font-bold text-white">About Me</h3>
-                    <button id="close-about-modal" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
-                </div>
-                <div class="space-y-4 text-gray-300 leading-relaxed">
-                    <p>I am a dedicated Computer Science student at COMSATS University Islamabad with a strong passion for Artificial Intelligence and Machine Learning.</p>
-                    <p>My journey in tech is driven by curiosity and a desire to build intelligent systems that solve real-world problems. I specialize in Python and am actively exploring Deep Learning frameworks.</p>
-                    <p>When I'm not coding, I'm usually reading up on the latest AI research or contributing to open-source projects on GitHub.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="command-palette" class="modal fixed inset-0 z-[101] flex items-start justify-center p-4 pt-20 md:pt-32 opacity-0 pointer-events-none">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        <div class="modal-content relative bg-gray-900/90 border border-white/20 w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden transform -translate-y-4">
-            <div class="flex items-center p-4 border-b border-white/10">
-                <i class="fas fa-terminal text-amber-300 mr-3"></i>
-                <input type="text" id="command-input" placeholder="Type a command (e.g., 'resume', 'projects', 'github')..." class="bg-transparent border-none outline-none text-white w-full font-roboto-mono placeholder-gray-500">
-                <kbd class="hidden md:block px-2 py-1 bg-gray-800 text-gray-400 text-xs rounded border border-white/10 font-roboto-mono ml-2">ESC</kbd>
-            </div>
-            <ul id="command-list" class="max-h-80 overflow-y-auto p-2">
-                </ul>
-            <div class="p-3 bg-black/20 border-t border-white/5 flex justify-between items-center">
-                <span class="text-[10px] text-gray-500 font-roboto-mono uppercase tracking-widest">Command Palette</span>
-                <div class="flex gap-4">
-                    <span class="text-[10px] text-gray-500 flex items-center gap-1"><kbd class="px-1 bg-gray-800 rounded">↑↓</kbd> Navigate</span>
-                    <span class="text-[10px] text-gray-500 flex items-center gap-1"><kbd class="px-1 bg-gray-800 rounded">↵</kbd> Select</span>
-                </div>
-            </div>
+        <div class="relative bg-gray-900 border border-white/10 p-8 rounded-3xl max-w-lg">
+            <h2 class="text-3xl font-bold text-amber-300 mb-4">About Me</h2>
+            <p class="text-gray-300 mb-4">Computer Science student at COMSATS Islamabad. Deeply passionate about building meaningful tech with AI/ML. [cite: 85, 87]</p>
+            <button id="close-about-modal" class="text-amber-300 font-bold">Close</button>
         </div>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- SPOTLIGHT EFFECT ---
-        const spotlight = document.querySelector('.spotlight');
-        document.addEventListener('mousemove', (e) => {
-            spotlight.style.setProperty('--x', `${e.clientX}px`);
-            spotlight.style.setProperty('--y', `${e.clientY}px`);
-        });
-
-        // --- THEME TOGGLE ---
-        const themeToggle = document.getElementById('theme-toggle');
-        const sunIcon = themeToggle.querySelector('.fa-sun');
-        const moonIcon = themeToggle.querySelector('.fa-moon');
-        
-        const setTheme = (isLight) => {
-            if (isLight) {
-                document.documentElement.classList.remove('dark');
-                document.documentElement.classList.add('light');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            } else {
-                document.documentElement.classList.remove('light');
-                document.documentElement.classList.add('dark');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Typewriter
+            const skills = ["AI/ML Specialist", "Deep Learning Enthusiast", "Python Developer", "Computer Vision Researcher"];
+            let idx = 0, char = 0, del = false;
+            const el = document.getElementById('skills-text');
+            function type() {
+                const s = skills[idx];
+                el.textContent = s.substring(0, del ? char-- : char++);
+                let spd = del ? 50 : 100;
+                if(!del && char > s.length) { del = true; spd = 2000; }
+                else if(del && char === 0) { del = false; idx = (idx+1)%skills.length; spd = 500; }
+                setTimeout(type, spd);
             }
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        };
+            type();
 
-        const savedTheme = localStorage.getItem('theme');
-        setTheme(savedTheme === 'light');
-
-        themeToggle.addEventListener('click', () => {
-            const isLight = document.documentElement.classList.contains('light');
-            setTheme(!isLight);
-        });
-
-        // --- TYPEWRITER EFFECT ---
-        const skills = ["Machine Learning Specialist", "Deep Learning Enthusiast", "Python Developer", "Data Scientist", "Computer Vision Researcher"];
-        let skillIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const skillsText = document.getElementById('skills-text');
-
-        const type = () => {
-            const currentSkill = skills[skillIndex];
-            if (isDeleting) {
-                skillsText.textContent = currentSkill.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                skillsText.textContent = currentSkill.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && charIndex === currentSkill.length) {
-                isDeleting = true;
-                typeSpeed = 2000;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                skillIndex = (skillIndex + 1) % skills.length;
-                typeSpeed = 500;
-            }
-
-            setTimeout(type, typeSpeed);
-        };
-        type();
-
-        // --- SCROLL REVEAL ---
-        const reveals = document.querySelectorAll('.reveal');
-        const revealOnScroll = () => {
-            reveals.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.85) {
-                    el.classList.add('visible');
-                }
+            // Spotlight
+            document.addEventListener('mousemove', e => {
+                document.querySelector('.spotlight').style.setProperty('--x', e.clientX+'px');
+                document.querySelector('.spotlight').style.setProperty('--y', e.clientY+'px');
             });
-        };
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll();
 
-        // --- EMAIL COPY ---
-        const copyEmailBtn = document.getElementById('copy-email-btn');
-        const emailAddress = document.getElementById('email-address').textContent;
-        const copyFeedback = document.getElementById('copy-feedback');
+            // Reveal
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
 
-        copyEmailBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText(emailAddress).then(() => {
-                copyFeedback.style.opacity = '1';
-                setTimeout(() => {
-                    copyFeedback.style.opacity = '0';
-                }, 2000);
+            // Theme
+            const toggle = document.getElementById('theme-toggle');
+            toggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('light');
+                toggle.querySelector('.fa-sun').classList.toggle('hidden');
+                toggle.querySelector('.fa-moon').classList.toggle('hidden');
             });
+
+            // About Modal
+            const modal = document.getElementById('about-modal');
+            document.getElementById('open-about-modal').addEventListener('click', () => modal.classList.remove('opacity-0', 'pointer-events-none'));
+            document.getElementById('close-about-modal').addEventListener('click', () => modal.classList.add('opacity-0', 'pointer-events-none'));
+
+            // Year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
         });
-
-        // --- MODAL LOGIC ---
-        const openModal = (modal) => {
-            modal.classList.remove('pointer-events-none', 'opacity-0');
-            modal.querySelector('.modal-content').classList.remove('scale-95', '-translate-y-4');
-            document.body.style.overflow = 'hidden';
-        };
-
-        const closeModal = (modal) => {
-            modal.classList.add('pointer-events-none', 'opacity-0');
-            modal.querySelector('.modal-content').classList.add('scale-95', '-translate-y-4');
-            document.body.style.overflow = 'auto';
-        };
-
-        document.getElementById('open-about-modal').addEventListener('click', () => openModal(document.getElementById('about-modal')));
-        document.getElementById('close-about-modal').addEventListener('click', () => closeModal(document.getElementById('about-modal')));
-
-        // Close modals on clicking backdrop
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal || e.target.classList.contains('absolute')) {
-                    closeModal(modal);
-                }
-            });
-        });
-
-        // --- COMMAND PALETTE ---
-        const commandPalette = document.getElementById('command-palette');
-        const commandInput = document.getElementById('command-input');
-        const commandList = document.getElementById('command-list');
-
-        const commands = [
-            { name: 'View Resume', icon: 'fa-file-pdf', action: () => window.open('https://drive.google.com/file/d/1VM9R6AureqCIAF5p3Hmr04GWhYPrdzXz/view?usp=sharing', '_blank') },
-            { name: 'GitHub Profile', icon: 'fa-github', action: () => window.open('https://github.com/DaniyalSE', '_blank') },
-            { name: 'LinkedIn Profile', icon: 'fa-linkedin', action: () => window.open('https://www.linkedin.com/in/syeddaniyalnaqvi/', '_blank') },
-            { name: 'About Me', icon: 'fa-user-circle', action: () => openModal(document.getElementById('about-modal')) },
-            { name: 'Contact Me', icon: 'fa-envelope', action: () => document.getElementById('contact-section').scrollIntoView() },
-            { name: 'View Projects', icon: 'fa-code', action: () => document.getElementById('projects-section').scrollIntoView() },
-            { name: 'Toggle Theme', icon: 'fa-adjust', action: () => themeToggle.click() }
-        ];
-
-        const renderCommands = (filter = '') => {
-            commandList.innerHTML = '';
-            const filtered = commands.filter(c => c.name.toLowerCase().includes(filter.toLowerCase()));
-            filtered.forEach(cmd => {
-                const li = document.createElement('li');
-                li.className = 'flex items-center p-3 rounded-xl hover:bg-white/10 cursor-pointer text-gray-300 transition-colors group';
-                li.innerHTML = `
-                    <i class="fas ${cmd.icon} w-8 text-center group-hover:text-amber-300 transition-colors"></i>
-                    <span class="font-roboto-mono text-sm">${cmd.name}</span>
-                `;
-                li.onclick = () => {
-                    cmd.action();
-                    closeModal(commandPalette);
-                };
-                commandList.appendChild(li);
-            });
-        };
-
-        const openCommandPalette = () => {
-            openModal(commandPalette);
-            commandInput.value = '';
-            commandInput.focus();
-            renderCommands();
-        };
-
-        document.getElementById('command-palette-mobile-trigger').addEventListener('click', openCommandPalette);
-        commandInput.addEventListener('input', () => renderCommands(commandInput.value));
-        commandInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                const firstCommand = commandList.querySelector('li');
-                if (firstCommand) firstCommand.click();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                const isPaletteOpen = !commandPalette.classList.contains('opacity-0');
-                isPaletteOpen ? closeModal(commandPalette) : openCommandPalette();
-            }
-            if (e.key === 'Escape') {
-                const openModals = document.querySelectorAll('.modal:not(.opacity-0)');
-                if (openModals.length > 0) {
-                    closeModal(openModals[openModals.length - 1]);
-                }
-            }
-        });
-
-        // --- FOOTER YEAR ---
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    });
     </script>
 </body>
 </html>
